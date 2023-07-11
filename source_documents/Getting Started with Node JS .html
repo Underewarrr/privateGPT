@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html data-lt-installed="true" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title class="jsx-2744003040">Getting Started with Node JS | Pluralsight | Pluralsight</title><meta name="description" content="Want to learn Node JS? In this guide we are going to introduce Node JS with Node Package Module (NPM) through a step by step basic implementation and explanation. Get started using Node JS Today!" class="jsx-2744003040"><link rel="canonical" href="Getting%20Started%20with%20Node%20JS%20_arquivos/getting-started-with-nodejs.html" class="jsx-2744003040"><script type="text/javascript" src="Getting%20Started%20with%20Node%20JS%20_arquivos/2700af8a3c"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/nr-1071.min.js" data-airgap-id="31"></script><script data-cfasync="false" data-prompt="auto" src="Getting%20Started%20with%20Node%20JS%20_arquivos/airgap.js" data-airgap-id="26"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/launch-b12e2e8e4ced.min.js" async="" data-airgap-id="27"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Want to learn Node JS? In this guide we are going to introduce Node JS with Node Package Module (NPM) through a step by step basic implementation and explanation. Get started using Node JS Today!" class="jsx-2744003040"><link rel="canonical" href="Getting%20Started%20with%20Node%20JS%20_arquivos/getting-started-with-nodejs.html" class="jsx-2744003040"><meta name="next-head-count" content="6"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[/s](d+.d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"2700af8a3c",applicationID:"undefined",sa:1}</script><link rel="shortcut icon" href="https://s2.pluralsight.com/favicon.ico" data-airgap-id="2"><meta charset="utf-8"><style>
+                    body {
+                      padding: 0;
+                      margin: 0;
+                      background: #0D0F12;
+                      line-height: 1.77;
+                    }
+
+                    #ps-main {
+                      font-family: var(--psTypeFontFamily);
+                      font-size: 1.2857142857142858rem;
+                      font-weight: 300;
+                    }
+                </style><style>@-webkit-keyframes animation_fs9fst{100%{transform:rotate(360deg);-webkit-transform:rotate(360deg);}}@-moz-keyframes animation_fs9fst{100%{transform:rotate(360deg);-webkit-transform:rotate(360deg);}}@-o-keyframes animation_fs9fst{100%{transform:rotate(360deg);-webkit-transform:rotate(360deg);}}@keyframes animation_fs9fst{100%{transform:rotate(360deg);-webkit-transform:rotate(360deg);}}.css-19o89hk,[data-css-19o89hk]{margin:0 auto;padding:48px 24px;text-align:center;display:-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 100ms 300ms;color:rgba(255, 255, 255, 0.95);-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-webkit-transition:opacity 100ms 300ms;-moz-transition:opacity 100ms 300ms;}.css-g3x4fp,[data-css-g3x4fp]{margin:0 auto;padding:48px 24px;text-align:center;display:-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 100ms 300ms;color:rgba(255, 255, 255, 0.95);opacity:0;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-webkit-transition:opacity 100ms 300ms;-moz-transition:opacity 100ms 300ms;}.css-1gwvklx,[data-css-1gwvklx]{display:inline-block;margin-bottom:24px;transition:all 100ms;width:64px;height:64px;-webkit-transition:all 100ms;-moz-transition:all 100ms;}.css-amk6wt,[data-css-amk6wt]{margin-bottom:24px;letter-spacing:-0.36px;font-weight:400;max-width:500px;font-size:18px;}.css-15yp1t4,[data-css-15yp1t4]{margin-bottom:24px;font-size:14px;letter-spacing:0.01em;line-height:24px;max-width:500px;color:rgba(255, 255, 255, 0.95);}.css-qnkvkp,[data-css-qnkvkp]{text-transform:uppercase;margin-bottom:24px;font-size:12px;letter-spacing:0.08em;line-height:16px;max-width:500px;color:rgba(255, 255, 255, 0.70);}.css-y5dqt5,[data-css-y5dqt5]{position:relative;display:-webkit-inline-box; display: -moz-inline-box; display: -ms-inline-flexbox; display: -webkit-inline-flex; display: inline-flex;justify-content:center;align-items:stretch;border:0;border-radius:3px;font-size:16px;font-weight:500;text-align:center;white-space:nowrap;text-decoration:none;transition:background 200ms, -webkit-transform 100ms, transform 100ms;vertical-align:middle;letter-spacing:0.01em;padding:10px 16px;height:40px;color:rgba(255, 255, 255, 0.95);background:#0074AB;-webkit-box-pack:center;-webkit-justify-content:center;-webkit-box-align:stretch;-webkit-align-items:stretch;-webkit-transition:background 200ms, -webkit-transform 100ms, transform 100ms;-moz-transition:background 200ms, transform 100ms;}.css-y5dqt5:not([disabled]):hover,[data-css-y5dqt5]:not([disabled]):hover{cursor:pointer;background:#006395;}.css-y5dqt5:focus:not(:focus-visible),[data-css-y5dqt5]:focus:not(:focus-visible){outline:none;box-shadow:none;}.css-y5dqt5:not([disabled]):active,[data-css-y5dqt5]:not([disabled]):active{transform:scale(0.98);background:#005685;-webkit-transform:scale(0.98);}.css-y5dqt5:focus,[data-css-y5dqt5]:focus{outline:none;box-shadow:0 0 0 2px #58B9EB;}.css-y5dqt5:focus-visible,[data-css-y5dqt5]:focus-visible{outline:none;box-shadow:0 0 0 2px #58B9EB;}.css-y5dqt5:not([disabled]):focus,[data-css-y5dqt5]:not([disabled]):focus{background:#006395;cursor:pointer;}.css-15b13by,[data-css-15b13by]{align-items:center;display:-webkit-inline-box; display: -moz-inline-box; display: -ms-inline-flexbox; display: -webkit-inline-flex; display: inline-flex;pointer-events:none;-webkit-box-align:center;-webkit-align-items:center;}.css-1uk30vr,[data-css-1uk30vr]{position:relative;display:-webkit-inline-box; display: -moz-inline-box; display: -ms-inline-flexbox; display: -webkit-inline-flex; display: inline-flex;justify-content:center;align-items:stretch;border:none;border-radius:3px;font-size:16px;font-weight:500;text-align:center;white-space:nowrap;text-decoration:none;transition:background 200ms, -webkit-transform 100ms, transform 100ms;vertical-align:middle;letter-spacing:0.01em;padding:10px 16px;height:40px;background:none;color:rgba(255, 255, 255, 0.70);-webkit-box-pack:center;-webkit-justify-content:center;-webkit-box-align:stretch;-webkit-align-items:stretch;-webkit-transition:background 200ms, -webkit-transform 100ms, transform 100ms;-moz-transition:background 200ms, transform 100ms;}.css-1uk30vr:not([disabled]):hover,[data-css-1uk30vr]:not([disabled]):hover{cursor:pointer;background:rgba(138,153,168, 0.25);color:rgba(255, 255, 255, 0.95);}.css-1uk30vr:focus:not(:focus-visible),[data-css-1uk30vr]:focus:not(:focus-visible){outline:none;box-shadow:none;}.css-1uk30vr:not([disabled]):active,[data-css-1uk30vr]:not([disabled]):active{transform:scale(0.98);background:rgba(138,153,168, 0.20);color:rgba(255, 255, 255, 0.95);-webkit-transform:scale(0.98);}.css-1uk30vr:focus,[data-css-1uk30vr]:focus{outline:none;box-shadow:0 0 0 2px #58B9EB;}.css-1uk30vr:focus-visible,[data-css-1uk30vr]:focus-visible{outline:none;box-shadow:0 0 0 2px #58B9EB;}.css-1uk30vr:not([disabled]):focus,[data-css-1uk30vr]:not([disabled]):focus{background:rgba(138,153,168, 0.25);color:rgba(255, 255, 255, 0.95);}.css-1ieon0s,[data-css-1ieon0s]{margin:16px 0;font-weight:600;}.css-lgo8yq,[data-css-lgo8yq]{font-size:40px;line-height:52px;}.css-1ez0qa4,[data-css-1ez0qa4]{color:rgba(255, 255, 255, 0.95);}.css-ovsjkc,[data-css-ovsjkc]{margin:16px 0;font-weight:600;font-size:40px;line-height:52px;color:rgba(255, 255, 255, 0.95);}.css-q6kj99,[data-css-q6kj99]{position:relative;display:-webkit-inline-box; display: -moz-inline-box; display: -ms-inline-flexbox; display: -webkit-inline-flex; display: inline-flex;justify-content:center;align-items:center;text-align:center;border-radius:16px;font-weight:500;text-decoration:none;color:rgba(255, 255, 255, 0.95);background-color:rgba(138,153,168, 0.25);transition:background-color 100ms linear, color 100ms linear;-webkit-box-pack:center;-webkit-justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-webkit-transition:background-color 100ms linear, color 100ms linear;-moz-transition:background-color 100ms linear, color 100ms linear;}.css-1u9d2c9,[data-css-1u9d2c9]{height:32px;padding:0 16px;font-size:14px;line-height:32px;}.css-q4lcrt,[data-css-q4lcrt]{position:relative;display:-webkit-inline-box; display: -moz-inline-box; display: -ms-inline-flexbox; display: -webkit-inline-flex; display: inline-flex;justify-content:center;align-items:center;text-align:center;border-radius:16px;font-weight:500;text-decoration:none;color:rgba(255, 255, 255, 0.95);background-color:rgba(138,153,168, 0.25);transition:background-color 100ms linear, color 100ms linear;height:32px;padding:0 16px;font-size:14px;line-height:32px;-webkit-box-pack:center;-webkit-justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-webkit-transition:background-color 100ms linear, color 100ms linear;-moz-transition:background-color 100ms linear, color 100ms linear;}.css-19mbihv,[data-css-19mbihv]{position:relative;display:inline-block;line-height:0;flex:1 1 100%;-webkit-flex:1 1 100%;}.css-19mbihv:after,[data-css-19mbihv]:after{content:" ";position:absolute;border-width:3px;border-style:solid;border-color:#0084BD;pointer-events:none;visibility:hidden;}.css-1tcm1ro:after,[data-css-1tcm1ro]:after{border-radius:1000px;}.css-1fzxw5o:after,[data-css-1fzxw5o]:after{top:-4px;bottom:-4px;left:-4px;right:-4px;}.css-hqp99b,[data-css-hqp99b]{flex-basis:0;flex-grow:0;-webkit-flex-basis:0;-webkit-flex-grow:0;}.css-dkg1ym:focus-within:after,[data-css-dkg1ym]:focus-within:after, .css-dkg1ym[focus-within]:after, [data-css-dkg1ym][focus-within]:after{visibility:visible;border-color:#0084BD;}.css-1lu7sfl,[data-css-1lu7sfl]{position:relative;display:inline-block;line-height:0;flex:1 1 100%;flex-basis:0;flex-grow:0;-webkit-flex:1 1 100%;-webkit-flex-basis:0;-webkit-flex-grow:0;}.css-1lu7sfl:after,[data-css-1lu7sfl]:after{content:" ";position:absolute;border-width:3px;border-style:solid;border-color:#0084BD;pointer-events:none;visibility:hidden;border-radius:1000px;top:-4px;bottom:-4px;left:-4px;right:-4px;}.css-1lu7sfl:focus-within:after,[data-css-1lu7sfl]:focus-within:after, .css-1lu7sfl[focus-within]:after, [data-css-1lu7sfl][focus-within]:after{visibility:visible;border-color:#0084BD;}.css-1997kh1,[data-css-1997kh1]{display:inline-block;max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.css-7dab2f,[data-css-7dab2f]{display:-webkit-inline-box; display: -moz-inline-box; display: -ms-inline-flexbox; display: -webkit-inline-flex; display: inline-flex;align-items:center;justify-content:center;height:24px;width:24px;-webkit-box-align:center;-webkit-align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;}.css-7dab2f > svg,[data-css-7dab2f] > svg{fill:currentColor;flex:1;-webkit-flex:1;}.css-k31qw2,[data-css-k31qw2]{display:-webkit-inline-box; display: -moz-inline-box; display: -ms-inline-flexbox; display: -webkit-inline-flex; display: inline-flex;align-items:center;justify-content:center;height:20px;width:20px;-webkit-box-align:center;-webkit-align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;}.css-k31qw2 > svg,[data-css-k31qw2] > svg{fill:currentColor;flex:1;-webkit-flex:1;}.css-q4kl4e,[data-css-q4kl4e]{font-size:34px;line-height:40px;}.css-1s4wg44,[data-css-1s4wg44]{color:rgba(0, 0, 0, 0.90);}.css-nypl32,[data-css-nypl32]{margin:16px 0;font-weight:600;font-size:34px;line-height:40px;color:rgba(0, 0, 0, 0.90);}.css-1ak2kcc,[data-css-1ak2kcc]{font-size:28px;line-height:36px;}.css-1ez5vuk,[data-css-1ez5vuk]{margin:16px 0;font-weight:600;font-size:28px;line-height:36px;color:rgba(0, 0, 0, 0.90);}.css-wr5axw,[data-css-wr5axw]{color:#0074AB;text-decoration:none;}.css-wr5axw:hover,[data-css-wr5axw]:hover{color:#0074AB;text-decoration:underline;}.css-1o5pyzy,[data-css-1o5pyzy]{padding:0 4px;border-radius:2px;line-height:24px;white-space:pre-wrap;font-family:"DM Mono", "Source Code Pro", monospace;font-weight:500;font-size:14px;word-break:break-word;}.css-99i3tc,[data-css-99i3tc]{color:#006395;background:rgba(138,153,168, 0.25);border:1px solid rgba(0, 0, 0, 0.15);}.css-geztkt,[data-css-geztkt]{padding:0 4px;border-radius:2px;line-height:24px;white-space:pre-wrap;font-family:"DM Mono", "Source Code Pro", monospace;font-weight:500;font-size:14px;word-break:break-word;color:#006395;background:rgba(138,153,168, 0.25);border:1px solid rgba(0, 0, 0, 0.15);}.css-1gbfzly,[data-css-1gbfzly]{margin:16px 0;font-weight:600;font-size:28px;line-height:36px;color:rgba(255, 255, 255, 0.95);}.css-18tgvim,[data-css-18tgvim]{margin:16px 0;font-weight:400;}.css-1rw3fmk,[data-css-1rw3fmk]{font-size:16px;letter-spacing:0.01em;line-height:24px;}.css-17nixd9,[data-css-17nixd9]{margin:16px 0;font-weight:400;font-size:16px;letter-spacing:0.01em;line-height:24px;color:rgba(255, 255, 255, 0.95);}.css-w0yocm,[data-css-w0yocm]{display:inline-block;}.css-1r967oi,[data-css-1r967oi]{position:relative;display:-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;align-items:center;min-width:calc(192px + 8px);-webkit-box-align:center;-webkit-align-items:center;}.css-rltil5,[data-css-rltil5]{align-items:center;background:#0D0F12;border:1px solid rgba(255, 255, 255, 0.30);border-radius:2px;color:rgba(255, 255, 255, 0.95);display:-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;font-weight:400;height:40px;min-width:192px;padding:0 calc(8px + 24px + 8px) 0 16px;position:relative;width:100%;-webkit-box-align:center;-webkit-align-items:center;}.css-7mw7i0,[data-css-7mw7i0]{width:100%;background:none;border:none;color:inherit;font-size:14px;line-height:24px;outline:none;padding:0;}.css-7mw7i0:focus,[data-css-7mw7i0]:focus{outline:none;}.css-7mw7i0::placeholder,[data-css-7mw7i0]::placeholder{color:rgba(255, 255, 255, 0.70);}.css-7mw7i0:disabled,[data-css-7mw7i0]:disabled{cursor:not-allowed;}.css-1n6hr0x,[data-css-1n6hr0x]{position:absolute;left:auto;top:50%;transform:translateY(-50%);display:-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;align-items:center;color:rgba(255, 255, 255, 0.70);right:8px;-webkit-transform:translateY(-50%);-webkit-box-align:center;-webkit-align-items:center;}.css-4pq93p:after,[data-css-4pq93p]:after{border-radius:4px;}.css-ctre2o,[data-css-ctre2o]{position:relative;display:inline-block;line-height:0;flex:1 1 100%;-webkit-flex:1 1 100%;}.css-ctre2o:after,[data-css-ctre2o]:after{content:" ";position:absolute;border-width:3px;border-style:solid;border-color:#0084BD;pointer-events:none;visibility:hidden;border-radius:4px;top:-4px;bottom:-4px;left:-4px;right:-4px;}.css-ctre2o:focus-within:after,[data-css-ctre2o]:focus-within:after, .css-ctre2o[focus-within]:after, [data-css-ctre2o][focus-within]:after{visibility:visible;border-color:#0084BD;}.css-1suuvy1,[data-css-1suuvy1]{display:-webkit-inline-box; display: -moz-inline-box; display: -ms-inline-flexbox; display: -webkit-inline-flex; display: inline-flex;width:100%;overflow:hidden;font-size:12px;cursor:pointer;border:none;background:none;align-items:center;transition:all 300ms;padding:12px 16px;border-top:1px solid rgba(255, 255, 255, 0.15);color:rgba(255, 255, 255, 0.70);-webkit-box-align:center;-webkit-align-items:center;-webkit-transition:all 300ms;-moz-transition:all 300ms;}.css-1suuvy1:hover,[data-css-1suuvy1]:hover{background:rgba(138,153,168, 0.25);}.css-1suuvy1:hover,[data-css-1suuvy1]:hover, .css-1suuvy1:active, [data-css-1suuvy1]:active{color:rgba(255, 255, 255, 0.95);}.css-17v14zz,[data-css-17v14zz]{display:inline-block;padding-left:12px;margin-left:auto;}.css-1h00rme,[data-css-1h00rme]{transition:-webkit-transform 300ms,transform 300ms;-webkit-transition:-webkit-transform 300ms,transform 300ms;-moz-transition:transform 300ms;}.css-19vzw9x,[data-css-19vzw9x]{display:-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;align-items:center;width:100%;padding:12px 0;text-align:left;border-top:1px solid rgba(255, 255, 255, 0.15);-webkit-box-align:center;-webkit-align-items:center;}.css-19vzw9x:hover div,[data-css-19vzw9x]:hover div, .css-19vzw9x:hover div, [data-css-19vzw9x]:hover div{opacity:1;}.css-19vzw9x:first-of-type,[data-css-19vzw9x]:first-of-type{border-top:none;}.css-1a8dsip,[data-css-1a8dsip]{display:-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;flex:1;flex-direction:column;align-self:center;min-width:0;-webkit-flex:1;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-webkit-align-self:center;}.css-1ctpnpd,[data-css-1ctpnpd]{max-width:calc(100% - 0px - (2 * 24px + 2 * 8px));}.css-1c6w75u,[data-css-1c6w75u]{display:-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;flex:1;flex-direction:column;align-self:center;min-width:0;max-width:calc(100% - 0px - (2 * 24px + 2 * 8px));-webkit-flex:1;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-webkit-align-self:center;}.css-183v8n,[data-css-183v8n]{display:block;font-weight:500;text-align:left;}.css-piydn8,[data-css-piydn8]{font-size:14px;line-height:20px;}.css-nu4y7h,[data-css-nu4y7h]{display:block;font-weight:500;text-align:left;font-size:14px;line-height:20px;color:rgba(255, 255, 255, 0.95);}.css-tc8kwl,[data-css-tc8kwl]{pointer-events:all;}.css-tc8kwl a,[data-css-tc8kwl] a{color:inherit;cursor:pointer;text-decoration:none;}.css-tc8kwl a:active,[data-css-tc8kwl] a:active, .css-tc8kwl a:hover, [data-css-tc8kwl] a:hover{text-decoration:underline;transition:all 300ms;-webkit-transition:all 300ms;-moz-transition:all 300ms;}.css-1r7f4pa:active,[data-css-1r7f4pa]:active, .css-1r7f4pa:hover, [data-css-1r7f4pa]:hover{color:rgba(255, 255, 255, 0.95);}.css-1bnk4mn,[data-css-1bnk4mn]{pointer-events:all;}.css-1bnk4mn a,[data-css-1bnk4mn] a{color:inherit;cursor:pointer;text-decoration:none;}.css-1bnk4mn a:active,[data-css-1bnk4mn] a:active, .css-1bnk4mn a:hover, [data-css-1bnk4mn] a:hover{text-decoration:underline;transition:all 300ms;-webkit-transition:all 300ms;-moz-transition:all 300ms;}.css-1bnk4mn:active,[data-css-1bnk4mn]:active, .css-1bnk4mn:hover, [data-css-1bnk4mn]:hover{color:rgba(255, 255, 255, 0.95);}.css-1nued41,[data-css-1nued41]{display:-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;align-items:center;font-weight:400;line-height:20px;max-width:100%;padding-top:4px;-webkit-box-align:center;-webkit-align-items:center;}.css-c8tnxo,[data-css-c8tnxo]{color:rgba(255, 255, 255, 0.70);}.css-1klj2um,[data-css-1klj2um]{font-size:12px;padding-top:0;}.css-1iuvoh7,[data-css-1iuvoh7]{display:-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;align-items:center;font-weight:400;line-height:20px;max-width:100%;padding-top:0;color:rgba(255, 255, 255, 0.70);font-size:12px;-webkit-box-align:center;-webkit-align-items:center;}.css-1kcrbi9,[data-css-1kcrbi9]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex-shrink:2;max-width:25%;-webkit-flex-shrink:2;}.css-1kcrbi9:nth-of-type(1),[data-css-1kcrbi9]:nth-of-type(1){flex-shrink:1;max-width:50%;-webkit-flex-shrink:1;}.css-kykfz1,[data-css-kykfz1]{display:inline-block;margin:0 8px;}.css-gbnukb,[data-css-gbnukb]{display:-webkit-inline-box; display: -moz-inline-box; display: -ms-inline-flexbox; display: -webkit-inline-flex; display: inline-flex;align-items:center;justify-content:center;height:24px;width:24px;-webkit-box-align:center;-webkit-align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;}.css-gbnukb > svg,[data-css-gbnukb] > svg{fill:#FAD000;flex:1;-webkit-flex:1;}.css-1pe5xb7,[data-css-1pe5xb7]{display:-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;justify-content:flex-end;align-items:center;line-height:0;height:64px;transition:opacity 300ms;opacity:0;-webkit-box-pack:end;-webkit-justify-content:flex-end;-webkit-box-align:center;-webkit-align-items:center;-webkit-transition:opacity 300ms;-moz-transition:opacity 300ms;}.css-1pe5xb7 > button,[data-css-1pe5xb7] > button, .css-1pe5xb7 > a, [data-css-1pe5xb7] > a{margin-left:8px;}.css-1q1xq2l,[data-css-1q1xq2l]{opacity:1;}.css-7zyoug,[data-css-7zyoug]{display:-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;justify-content:flex-end;align-items:center;line-height:0;height:64px;transition:opacity 300ms;opacity:1;-webkit-box-pack:end;-webkit-justify-content:flex-end;-webkit-box-align:center;-webkit-align-items:center;-webkit-transition:opacity 300ms;-moz-transition:opacity 300ms;}.css-7zyoug > button,[data-css-7zyoug] > button, .css-7zyoug > a, [data-css-7zyoug] > a{margin-left:8px;}.css-6wu9td,[data-css-6wu9td]{position:absolute;top:auto;left:-10000px;width:1px;height:1px;padding:0px;margin:-1px;overflow:hidden;border:0px;}.css-1s813js,[data-css-1s813js]{background:#181C20;transition:all 300ms;box-shadow:inset 0 1px 3px 0 rgba(0,0,0,0.5);-webkit-transition:all 300ms;-moz-transition:all 300ms;}.css-riug09,[data-css-riug09]{margin:16px 0;font-weight:600;font-size:40px;line-height:52px;color:rgba(0, 0, 0, 0.90);}.css-3qevm5,[data-css-3qevm5]{margin:16px 0;font-weight:400;font-size:16px;letter-spacing:0.01em;line-height:24px;color:rgba(0, 0, 0, 0.90);}</style><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" data-airgap-id="3"><link rel="preload" href="Getting%20Started%20with%20Node%20JS%20_arquivos/c933283e27750c90.css" as="style" data-airgap-id="7"><link rel="stylesheet" href="Getting%20Started%20with%20Node%20JS%20_arquivos/c933283e27750c90.css" data-n-p="" data-airgap-id="8"><noscript data-n-css=""></noscript><script defer="defer" nomodule="" src="Getting%20Started%20with%20Node%20JS%20_arquivos/polyfills-0d1b80a048d4787e.js" data-airgap-id="9"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/webpack-aba639d3e0884ec6.js" defer="defer" data-airgap-id="10"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/framework-bb5c596eafb42b22.js" defer="defer" data-airgap-id="11"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/main-0e9c8d545662c428.js" defer="defer" data-airgap-id="12"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/_app-3266f31c96878a6a.js" defer="defer" data-airgap-id="13"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/158-db2c7ce7dc6a8754.js" defer="defer" data-airgap-id="14"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/499-eb502f0b08d08f15.js" defer="defer" data-airgap-id="15"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/286-ab25bc2498d202c3.js" defer="defer" data-airgap-id="16"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/763-215da5cc43fc978e.js" defer="defer" data-airgap-id="17"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/guide-d6d79bd08d369764.js" defer="defer" data-airgap-id="18"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/_buildManifest.js" defer="defer" data-airgap-id="19"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/_ssgManifest.js" defer="defer" data-airgap-id="20"></script><style data-href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500">@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/sourcecodepro/v22/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DP6QtMlrSg.woff) format('woff')}@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/sourcecodepro/v22/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DP6QtMRrSlcZZJmOpwVS.woff) format('woff');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/sourcecodepro/v22/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DP6QtM1rSlcZZJmOpwVS.woff) format('woff');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/sourcecodepro/v22/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DP6QtMVrSlcZZJmOpwVS.woff) format('woff');unicode-range:U+1F00-1FFF}@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/sourcecodepro/v22/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DP6QtMprSlcZZJmOpwVS.woff) format('woff');unicode-range:U+0370-03FF}@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/sourcecodepro/v22/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DP6QtMZrSlcZZJmOpwVS.woff) format('woff');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/sourcecodepro/v22/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DP6QtMdrSlcZZJmOpwVS.woff) format('woff');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/s/sourcecodepro/v22/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DP6QtMlrSlcZZJmOpw.woff) format('woff');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style><style type="text/css" data-glamor=""></style><style type="text/css" data-styled-jsx=""></style><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/AppMeasurement.min.js" async="" data-airgap-id="28"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/RC0d5fd8e7427f444a9e9eead9f410a4b3-source.min.js" async="" data-airgap-id="29"></script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/RC96e92175ee5c4c8faf44656a7c43e0ef-source.min.js" async="" data-airgap-id="32"></script><script type="text/javascript" async="" src="Getting%20Started%20with%20Node%20JS%20_arquivos/kowidget.v1.8.0.js" data-airgap-id="33"></script><style>._15JtsRsi0S5y-LARVHQ2sh {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+
+  position: fixed;
+  bottom: 12px;
+  left: 17px;
+  z-index: 1039;
+  cursor: pointer
+}
+._15JtsRsi0S5y-LARVHQ2sh::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+</style><style>._3ZnOeGVnCN5laxaPARcs25 {
+  display: block;
+  height: 24px;
+  width: 24px;
+  opacity: .4;
+  line-height: 1em;
+}
+</style><style>._3JWlf7C_iZDgdm39zdcic3 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 9998;
+}
+
+._36alxCGlCgb3_Ug_-dfqUg {
+  background: white;
+  color: black;
+  display: flex;
+  font-weight: 300;
+  left: 50%;
+  line-height: 1.71429;
+  padding-left: 0px;
+  padding-right: 0px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  z-index: 9999;
+}
+</style><style>._2HaeQZOopuE4qPgX6X89wo {
+  background: linear-gradient(to left, #ff7b39, #eb2a89);
+  height: 4px;
+  margin-left: 0;
+  margin-right: 0;
+}
+._3Jsxi6iExqqc9YlOpG7zqD {
+  height: 100%;
+  width: 100%;
+}
+._32lqL6GSzM5N_H6gBrR_Qp {
+  margin: 50px 50px 10px 50px;
+  min-height: 580px;
+}
+.KdGH90FoM7QiC12HIBxvT {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  height: 100%;
+  width: 100%
+}
+.KdGH90FoM7QiC12HIBxvT ._1D6wQWPmcKA5ULfQbGGQvQ {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+    flex: 1 1 auto;
+  }
+.KdGH90FoM7QiC12HIBxvT ._2VBZJtQA9sAzgZOSsm0olo {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: flex-start;
+  }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 360px;
+    margin-bottom: 15px;
+    width: 100%
+  }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk label {
+      font-size: 10pt;
+      margin-bottom: 5px;
+    }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+           appearance: none;
+      background-color: #fafafa;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
+      background-position: 100% center;
+      background-repeat: no-repeat;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #ccc;
+      border-radius: 0;
+      color: rgba(0, 0, 0, 0.75);
+      height: 40px;
+      min-width: 300px;
+      padding-left: 10px;
+      width: 300px;
+    }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk select:hover {
+      background-color: #f3f3f3;
+      border-color: #999;
+    }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk select::before,
+    .KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk select::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk select::after {
+      /*  Custom dropdown arrow */
+      content: "\25BC";
+      height: 1em;
+      font-size: 0.625em;
+      line-height: 1;
+      right: 1.2em;
+      top: 50%;
+      margin-top: -0.5em;
+    }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk input[type="text"],
+    .KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk input[type="email"] {
+      box-sizing: border-box;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #ccc;
+      border-radius: 0;
+      color: rgba(0, 0, 0, 0.75);
+      height: 40px;
+      min-width: 300px;
+      width: 300px;
+      padding-left: 10px
+    }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk input[type="text"][readonly], .KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk input[type="email"][readonly] {
+        background: #dedede;
+      }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk input[type="file"] {
+      display: none;
+    }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk ._1i9Q2zj9ra5oOy9_fXIb4W {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column
+    }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk ._1i9Q2zj9ra5oOy9_fXIb4W span {
+        width: 300px;
+      }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk ._1i9Q2zj9ra5oOy9_fXIb4W ._1BJ69gn4E4U3b-jHxfAATc {
+        margin-bottom: 5px;
+      }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk ._1i9Q2zj9ra5oOy9_fXIb4W ._1y3_4OjrxWiB-YXaMJlJIP {
+        cursor: pointer;
+        display: inline-block;
+        border: solid 1px #f96816;
+        box-sizing: border-box;
+        color: #f96816;
+        font-size: 11pt;
+        margin-right: 10px;
+        height: 40px;
+        width: 150px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 2.5em;
+      }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk textarea {
+      box-sizing: border-box;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #ccc;
+      border-radius: 0;
+      color: rgba(0, 0, 0, 0.75);
+      height: 120px;
+      min-width: 300px;
+      max-width: 300px;
+      width: 300px;
+      padding: 10px;
+    }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk textarea::after {
+      content: "";
+    }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk {
+
+    /*
+    & button {
+      align-self: flex-start;
+      background: #f96816;
+      border: solid 1px #f96816;
+      box-sizing: border-box;
+      color: white;
+      cursor: pointer;
+      font-size: 11pt;
+      height: 40px;
+      width: 150px;
+    }
+    */
+  }
+.KdGH90FoM7QiC12HIBxvT ._3jjCjQBwb59FX4f33QBxkk ul {
+      list-style: none;
+      padding: 0px;
+    }
+._2CJbbaDJ5XF_JL90v9LlZW {
+  font-size: 14px;
+  line-height: 20px;
+  margin: auto 40px auto 40px;
+  padding-bottom: 40px;
+}
+._3NtswlIbP3iK266cMYq5UC {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 100%
+}
+._3NtswlIbP3iK266cMYq5UC h3 {
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    line-height: 1.3333;
+    text-align: center;
+  }
+._1nQE3Dia9mlRko_WPpzRse {
+  text-align: center;
+}
+</style><style>.FOCZ29vAbEYUkbL1_TMo6 {
+  color: #0074ab;
+  text-decoration: none;
+}
+
+.FOCZ29vAbEYUkbL1_TMo6:hover {
+  color: #0084bd;
+  text-decoration: underline;
+}
+</style><style>._22r2sJSBWmMvRbbJmlthKe {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+}
+</style><style>._3GVfoepJ6KPoKc5CYHUq5e {
+  overflow: scroll;
+  margin: 0;
+  height: 380px;
+}
+</style><style>.LQ9jOn6jt2hb9wT57eg9Z {
+  font-size: 10pt;
+  margin-bottom: 20px;
+}
+</style><style>._3-O1AsZbx73-te4SWLzAKH {
+  align-items: stretch;
+  border-radius: 3px;
+  border: 0;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: center;
+  padding: 12px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background 200ms, transform 100ms;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  background: #0084bd;
+  color: #fff;
+}
+
+._3-O1AsZbx73-te4SWLzAKH:not([disabled]):active {
+  background: #005685;
+  transform: scale(0.98);
+}
+
+._3-O1AsZbx73-te4SWLzAKH:not([disabled]):hover {
+  background: #006395;
+  cursor: pointer;
+}
+
+._3-O1AsZbx73-te4SWLzAKH:not([disabled]):focus {
+  background: #006395;
+  box-shadow: 0 0 0 2px #006395;
+  cursor: pointer;
+}
+
+._3-O1AsZbx73-te4SWLzAKH:focus:not(._3_jChl_OkQS3PS75lj8wdk) {
+  box-shadow: 0 0 0 2px #2ea0d6;
+}
+
+._3-O1AsZbx73-te4SWLzAKH:focus:not(:focus-visible) {
+  box-shadow: 0 0 0 2px #2ea0d6;
+}
+</style><style>._2oETIQ5WnFbogLnUfXGkWI {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+
+  cursor: pointer;
+  fill: currentColor;
+  height: 15px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 15px;
+
+  color: rgba(0, 0, 0, 0.65)
+}
+._2oETIQ5WnFbogLnUfXGkWI::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+._2oETIQ5WnFbogLnUfXGkWI:hover {
+    color: rgba(0, 0, 0, 0.9);
+  }
+</style></head><body><div id="ps-container"><div id="ps-chrome"></div><div class="ps-main" id="ps-main" tabindex="-1"><div id="__next" data-reactroot=""><div><header class="jsx-3519913073 header"><a href="https://www.pluralsight.com/" alt="Pluralsight Home" class="jsx-3519913073 logo-link"><svg width="188px" height="40px" viewBox="0 0 188 40"><defs><linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="linearGradient-1"><stop stop-color="#F96816" offset="0%"></stop><stop stop-color="#E80A89" offset="100%"></stop></linearGradient></defs><g id="Header" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="JIT-Tutorials-Header" transform="translate(-24.000000, -22.000000)"><g id="Group-14"><g id="Group-3" transform="translate(24.000000, 22.000000)"><g id="pluralsight-logo-horizontal-color"><g id="pluralsight-logo"><g id="Pluralsight" transform="translate(50.350227, 14.375000)" fill="#FFFFFF"><polygon id="T" points="128.89658 0.207737908 128.89658 1.97224658 132.304282 1.97224658 132.304282 11.0428029 134.206652 11.0428029 134.206652 1.97224658 137.614354 1.97224658 137.614354 0.207737908"></polygon><polygon id="H" points="115.263288 0.207737908 117.151143 0.207737908 117.151143 4.71244502 122.276784 4.71244502 122.276784 0.207737908 124.164639 0.207737908 124.164639 11.0428029 122.276784 11.0428029 122.276784 6.47609254 117.151143 6.47609254 117.151143 11.0428029 115.263288 11.0428029"></polygon><path d="M100.003296,5.6561859 L100.003296,5.62518428 C100.003296,2.59133164 102.306121,0.0225032488 105.543907,0.0225032488 C107.416393,0.0225032488 108.568232,0.548669574 109.67311,1.49335772 L108.475163,2.93234942 C107.646932,2.2201734 106.833216,1.77064996 105.467061,1.77064996 C103.487844,1.77064996 101.983367,3.52051898 101.983367,5.59418266 L101.983367,5.62518428 C101.983367,7.85385604 103.440883,9.49521941 105.636123,9.49521941 C106.648785,9.49521941 107.570085,9.17056359 108.229255,8.67453773 L108.229255,6.64651531 L105.48243,6.64651531 L105.48243,4.9905123 L110.056487,4.9905123 L110.056487,9.54172183 C108.997717,10.4545472 107.47787,11.2278653 105.574646,11.2278653 C102.213051,11.2278653 100.003296,8.814045 100.003296,5.6561859" id="G"></path><polygon id="I" points="92.9542645 0.206618405 94.8412656 0.206618405 94.8412656 11.0416834 92.9542645 11.0416834"></polygon><path d="M79.5533581,9.46387333 L80.6881203,8.10152451 C81.7170055,8.99971024 82.7458907,9.5095146 84.080453,9.5095146 C85.2468076,9.5095146 85.9836772,8.96870862 85.9836772,8.14802694 L85.9836772,8.11788648 C85.9836772,7.34284607 85.5533385,6.9251854 83.5587527,6.46102231 C81.2721514,5.90385437 79.9828429,5.22267996 79.9828429,3.22652032 L79.9828429,3.19465754 C79.9828429,1.33714402 81.5180592,0.053160403 83.6509682,0.053160403 C85.2160691,0.053160403 86.458416,0.532824303 87.5487781,1.41550922 L86.536116,2.85536207 C85.5695616,2.12682409 84.6021533,1.74102619 83.6202297,1.74102619 C82.5144983,1.74102619 81.8706979,2.31283379 81.8706979,3.02500981 L81.8706979,3.05601143 C81.8706979,3.89133276 82.3616597,4.26335216 84.4177225,4.75851687 C86.6889546,5.31568481 87.8706783,6.13636649 87.8706783,7.93187678 L87.8706783,7.96201724 C87.8706783,9.99003965 86.2902082,11.1973804 84.0343453,11.1973804 C82.3923982,11.1973804 80.8426665,10.6247116 79.5533581,9.46387333" id="S"></path><polygon id="L" points="68.0115369 0.207737908 69.898538 0.207737908 69.898538 9.30929582 75.5467336 9.30929582 75.5467336 11.0428029 68.0115369 11.0428029"></polygon><path d="M56.936207,0.131008907 L58.6857388,0.131008907 L63.4126339,11.0427168 L61.4171942,11.0427168 L60.3276859,8.42738595 L55.2481522,8.42738595 L54.1432746,11.0427168 L52.2093119,11.0427168 L56.936207,0.131008907 Z M59.636924,6.73952016 L57.7806613,2.40532194 L55.9389141,6.73952016 L59.636924,6.73952016 Z" id="A"></path><path d="M39.2731768,0.207737908 L44.0615488,0.207737908 C45.4123342,0.207737908 46.4711041,0.610758922 47.161866,1.29107217 C47.7288202,1.87924173 48.0515742,2.68442261 48.0515742,3.6282496 L48.0515742,3.66011237 C48.0515742,5.4392607 46.9919505,6.50795531 45.4891804,6.94111679 L48.3888437,11.0428029 L46.1645731,11.0428029 L43.5244793,7.2657726 L41.1601779,7.2657726 L41.1601779,11.0428029 L39.2731768,11.0428029 L39.2731768,0.207737908 Z M43.9223718,5.57962913 C45.2731572,5.57962913 46.1329808,4.86659195 46.1329808,3.76775687 L46.1329808,3.73675526 C46.1329808,2.57591695 45.3047495,1.94124496 43.9078564,1.94124496 L41.1601779,1.94124496 L41.1601779,5.57962913 L43.9223718,5.57962913 Z" id="R"></path><path d="M24.7878039,6.44612431 L24.7878039,0.207910139 L26.6756588,0.207910139 L26.6756588,6.36775911 C26.6756588,8.38028072 27.704544,9.46361498 29.391745,9.46361498 C31.0652845,9.46361498 32.0933159,8.44228395 32.0933159,6.44612431 L32.0933159,0.207910139 L33.9811708,0.207910139 L33.9811708,6.3522583 C33.9811708,9.58762145 32.1701621,11.213484 29.3618604,11.213484 C26.5680742,11.213484 24.7878039,9.58762145 24.7878039,6.44612431" id="U"></path><polygon id="L" points="13.013597 0.207737908 14.901452 0.207737908 14.901452 9.30929582 20.5496476 9.30929582 20.5496476 11.0428029 13.013597 11.0428029"></polygon><path d="M0,0.207737908 L4.23593326,0.207737908 C6.73685011,0.207737908 8.31817412,1.64672961 8.31817412,3.8297601 L8.31817412,3.86076172 C8.31817412,6.29008284 6.38421144,7.56028796 4.0207639,7.56028796 L1.88700111,7.56028796 L1.88700111,11.0428029 L0,11.0428029 L0,0.207737908 Z M4.08224086,5.84142055 C5.50901862,5.84142055 6.40043453,5.03710084 6.40043453,3.90726415 L6.40043453,3.87540137 C6.40043453,2.60777972 5.49450323,1.94124496 4.08224086,1.94124496 L1.88700111,1.94124496 L1.88700111,5.84142055 L4.08224086,5.84142055 Z" id="P"></path></g><g id="Mark"><path d="M19.8302431,40 C30.7827007,40 39.6604862,31.044969 39.6604862,20.0008615 C39.6613403,8.95503101 30.7827007,0 19.8302431,0 C8.87863966,0 0,8.95503101 0,20.0008615 C0,31.044969 8.87778553,40 19.8302431,40 Z" id="circle" fill="url(#linearGradient-1)"></path><path d="M10.6897404,11.875 L10.6897404,28.125 L24.6328801,19.9999219 L10.6897404,11.875 Z M12.3939019,14.8530469 L21.2264162,19.9999219 L12.3939019,25.146875 L12.3939019,14.8530469 Z" id="arrow-small" fill="#FFFFFF"></path><path d="M14.7177585,9.53125 L14.7177585,30.46875 L32.5339926,20 L14.7177585,9.53125 Z M16.4219201,12.5217969 L29.1486757,20 L16.4219201,27.4782031 L16.4219201,12.5217969 Z" id="arrow-large" fill="#FFFFFF"></path></g></g></g></g></g></g></g></svg></a><div class="jsx-3519913073 auth-buttons"><div class="jsx-4223644170"><button style="background:linear-gradient(90deg, #E80A89 0%, #F15B2A 100%)" data-css-y5dqt5=""><span data-css-15b13by="" aria-hidden="false">Get started</span></button><button data-ui-login-button="true" data-css-1uk30vr=""><span data-css-15b13by="" aria-hidden="false">Log in</span></button></div></div></header><div style="height: 72.5px;" class="jsx-744625484 iframeContainer"><iframe src="Getting%20Started%20with%20Node%20JS%20_arquivos/promo-only.html" class="jsx-744625484 iframe" data-airgap-id="4"></iframe></div><div itemscope="" itemtype="http://schema.org/TechArticle" class="jsx-2744003040 root"><div style="background:#0D0F12" class="jsx-2744003040"><div aria-label="Author Information" class="jsx-2744003040 gray-background"><section class="jsx-2357984276 column-wrapper guide-details"><div class="jsx-2161879499 left-column guide-details-left-column"><div itemprop="creator" itemscope="" itemtype="http://schema.org/Person" class="jsx-3841407315 root"><img itemprop="image" src="Getting%20Started%20with%20Node%20JS%20_arquivos/5441386.jpeg" alt="Author avatar" class="jsx-3841407315" data-airgap-id="21"><p itemprop="name" class="jsx-3841407315 author-name">Gaurav Bhavsar</p></div></div><div class="jsx-629224323 right-column"><div class="jsx-3759398792 root"><h1 style="line-height:50px" data-ui-guide-title="true" itemprop="name" data-css-ovsjkc="">Getting Started with NodeJS</h1><div class="jsx-2724197123 author-details"><div class="jsx-2724197123 name-title-row"><h3 class="jsx-2724197123">Gaurav Bhavsar</h3></div><ul class="jsx-2724197123 meta"><li class="jsx-2724197123">Jan 10, 2019</li><li class="jsx-2724197123">7<!-- --> Min read</li><li class="jsx-2724197123">203,928<!-- --> View<!-- -->s</li></ul></div><ul class="jsx-3759398792 meta"><li itemprop="dateModified" class="jsx-3759398792">Jan 10, 2019</li><li class="jsx-3759398792"><span itemprop="timeRequired" class="jsx-3759398792">7<!-- --> Min</span> read</li><li class="jsx-3759398792">203,928<!-- --> View<!-- -->s</li></ul><section aria-label="Guide tags" itemprop="keywords" class="jsx-3759398792 tags"><span class="jsx-3759398792"><div data-css-1lu7sfl=""><div style="margin: 0px 0.571429rem 0.571429rem 0px;" data-css-q4lcrt=""><span data-css-1997kh1="">Node.js</span></div></div></span></section></div></div></section></div></div><div class="sticky-container" style="position:relative"><section class="jsx-2357984276 column-wrapper body"><div aria-label="Guide Navigation" class="jsx-2744003040"><div class="jsx-3053662345 left-column body-left-column"><div class="sticky sticky-nav" style="position: fixed; top: 0px;"><section class="jsx-2316450191 root module-nav"><div class="jsx-2316450191 current-module-title-container"><div class="jsx-2316450191 current-module-title"><div class="jsx-2316450191 current-module-title-text">Installation of NodeJS and NPM</div><button class="arrow-container" data-css-y5dqt5=""><span data-css-15b13by="" aria-hidden="false"><svg width="9px" height="4px" viewBox="0 0 9 4" style="transition:all 0.3s;transform:rotate(180deg)"><defs></defs><g id="Mobile-v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="JIT-Tuts---Phone" transform="translate(-254.000000, -368.000000)" fill="#AAAAAA"><g id="Group-25" transform="translate(24.000000, 342.000000)"><g id="Dropdown/Light/Stroke/Large" transform="translate(0.000000, 7.000000)"><polyline id="arrow" points="239 19 234.5 23 230 19 239 19"></polyline></g></g></g></g></svg></span></button></div><button data-ui-upvote="true" class="jsx-3924422583 root mobile-upvote"><div class="jsx-3924422583 inner"><div data-css-7dab2f=""><svg aria-label="thumb up icon" viewBox="0 0 24 24" role="img"><path fill-rule="evenodd" d="M9.4 8.5c-.29.072-.788.197-1.42.298A1 1 0 007 8H3a1 1 0 00-1 1v11a1 1 0 001 1h4a1 1 0 00.927-.624c.52.162.811.262.873.324l.3.1c1.6.6 3.4 1.2 5.9 1.2h4.2c1.6 0 2.8-1.2 2.8-2.8v-.3c.3-.3 1-1 1-2.2 0-.7-.1-1.1-.3-1.5l.034-.1c.105-.306.266-.773.266-1.4 0-.627-.16-1.094-.266-1.4a11.768 11.768 0 01-.034-.1l.039-.113c.105-.305.261-.757.261-1.287C23 9.3 21.7 8 20.2 8h-2.035c-.349 0-.596-.352-.523-.693.148-.695.202-1.524.202-2.407 0-1.4-.382-2.145-1.047-2.884A3.11 3.11 0 0014.453.969c-1.422 0-2.375.125-2.375 1.547v.243c.004.73.009 1.869-.178 2.941-.2.9-.529 1.577-1.025 2.05-.261.249-.775.55-1.475.75zM19.2 20c.5 0 .8-.3.8-.8v-.4c0-.71.298-1.002.569-1.268.225-.22.431-.423.431-.832 0-.495-.121-.718-.23-.918-.09-.164-.17-.312-.17-.582 0-.278.086-.45.178-.632.107-.212.222-.44.222-.868 0-.429-.115-.656-.221-.868-.093-.183-.179-.354-.179-.632 0-.33.121-.6.23-.842.09-.198.17-.378.17-.558 0-.4-.4-.8-.8-.8H18c-.844 0-1.488-.44-1.844-.938-.355-.497-.508-1.062-.453-1.859.007-.105.02-.22.035-.357.043-.401.106-.977.106-1.946 0-.867-.263-1.923-1.563-1.923-.148 0-.281.054-.281.223 0 .9 0 1.9-.2 2.8-.2 1.1-.6 2.2-1.6 3.2-.6.6-1.5 1-2.3 1.3-.45.15-1.239.3-1.9.408V18.3l1.5.5c.05 0 .1.025.15.05.05.025.1.05.15.05 1.5.6 2.9 1.1 5.2 1.1h4.2zM6 10H4v9h2v-9z"></path></svg></div><p data-ui-upvote-count="true" class="jsx-3924422583">396</p></div></button></div><div class="jsx-2316450191 module-nav-list-container hidden"><ul class="nav-items"><li class=""><a href="#module-introduction" class="menu-link">Introduction</a></li><li class=""><a href="#module-nodejs" class="menu-link">NodeJS</a></li><li class="is-current"><a href="#module-installationofnodejsandnpm" class="menu-link">Installation of NodeJS and NPM</a></li><li class=""><a href="#module-nodepackagemodule" class="menu-link">Node Package Module</a></li><li class=""><a href="#module-packagejson" class="menu-link">Package.json</a></li><li class=""><a href="#module-basicexample" class="menu-link">Basic Example</a></li><li class="top-link visible"><a href="#top" class="menu-link">Top<div data-css-k31qw2=""><svg aria-label="caret up icon" viewBox="0 0 24 24" role="img"><path d="M12 9l-5 5 1.41 1.41L12 11.83l3.59 3.58L17 14"></path></svg></div></a></li></ul></div></section></div></div><div class="jsx-629224323 right-column body-right-column"><div class="jsx-2407523658 root guide-section"><div id="module-introduction" data-module-id="introduction" class="jsx-3962230383"><div id="module-introduction-anchor" class="jsx-3962230383 anchor"></div><h2 data-css-nypl32="">Introduction</h2><div class="jsx-3796526469"><div><div><p>In
+ this article, I am going to introduce NodeJS with Node Package Module 
+(NPM), step-by-step basic implementation and explanation.</p></div></div><div><div><p>This article covers the following areas of NodeJS.</p></div></div><ul><div><div><li>Introduction of NodeJS</li></div></div><div><div><li>Installation of NodeJS and NPM</li></div></div><div><div><li>Node Package Module (NPM)</li></div></div><div><div><li>Package.json</li></div></div><div><div><li>Basic Example</li></div></div></ul></div></div></div><div class="jsx-2407523658 root guide-section"><div id="module-nodejs" data-module-id="nodejs" class="jsx-3962230383"><div id="module-nodejs-anchor" class="jsx-3962230383 anchor"></div><h2 data-css-nypl32="">NodeJS</h2><div class="jsx-3796526469"><div><div><p><a href="https://nodejs.org/en/" data-css-wr5axw="">NodeJS</a>
+ is an open-source, cross-platform runtime environment for developing 
+server-side web applications. NodeJS also has an event-driven 
+architecture capable of <a href="https://en.wikipedia.org/wiki/Asynchronous_I/O" data-css-wr5axw="">asynchronous I/O</a>.</p></div></div><div><div><p>NodeJS uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.</p></div></div></div></div></div><div class="jsx-2407523658 root guide-section"><div id="module-installationofnodejsandnpm" data-module-id="installationofnodejsandnpm" class="jsx-3962230383"><div id="module-installationofnodejsandnpm-anchor" class="jsx-3962230383 anchor"></div><h2 data-css-nypl32="">Installation of NodeJS and NPM</h2><div class="jsx-3796526469"><div><div><p>Installation of NodeJS and NPM is straightforward using the installer package available at NodeJS official web site.</p></div></div><ul><div><div><li>Download the installer from <a href="https://nodejs.org/en/" data-css-wr5axw="">NodeJS WebSite</a>.</li></div></div><div><div><li>Run the installer.</li></div></div><div><div><li>Follow the installer steps, agree the license agreement and click the next button.</li></div></div><div><div><li>Restart your system/machine.</li></div></div></ul><div><div><p>Now, test NodeJS by printing its version using the following command in Command Prompt:</p></div></div><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-bash" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#F2F2F2">&gt;</span><span> </span><span class="token" style="color:#8AC7E6">node</span><span> -v</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">bash</div></div></div><div><div><p>and test npm by printing its version using command</p></div></div><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-bash" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#F2F2F2">&gt;</span><span> </span><span class="token" style="color:#8AC7E6">npm</span><span> -v</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">bash</div></div></div><div><div><p>Simple way to test nodeJS work in your system is to create a javascript file which print a message.</p></div></div><div><div><p>Lets create test.js file</p></div></div><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-js" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#AAAAAA">/*test.js file*/</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">2</span><span></span><span class="token console class-name">console</span><span class="token" style="color:#F2F2F2">.</span><span class="token method property-access" style="color:#8AC7E6">log</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#B8CC7A">"Node is working"</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">js</div></div></div><div><div><p>Run the test.js file using Node command <span class="jsx-3120878690"><code data-css-geztkt="">&gt; node test.js</code></span> in command prompt.</p></div></div><div><div><p><img alt="description" src="Getting%20Started%20with%20Node%20JS%20_arquivos/640f8199-be76-4848-a093-0f9e2825d8a8.png" data-airgap-id="22"></p></div></div><div><div><p>You are done with installation.</p></div></div></div></div></div><div class="jsx-2407523658 root guide-section"><div id="module-nodepackagemodule" data-module-id="nodepackagemodule" class="jsx-3962230383"><div id="module-nodepackagemodule-anchor" class="jsx-3962230383 anchor"></div><h2 data-css-nypl32="">Node Package Module</h2><div class="jsx-3796526469"><div><div><p><a href="https://www.npmjs.com/" data-css-wr5axw="">NPM</a>
+ is the package module which helps javascript developers load 
+dependencies effectively. To load dependencies we just have to run a 
+command in command prompt:</p></div></div><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-bash" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#F2F2F2">&gt;</span><span> </span><span class="token" style="color:#8AC7E6">npm</span><span> </span><span class="token" style="color:#8AC7E6">install</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">bash</div></div></div><div><div><p>This command is finding a json file named as <span class="jsx-3120878690"><code data-css-geztkt="">package.json</code></span> in root directory to install all dependencies defined in the file.</p></div></div></div></div></div><div class="jsx-2407523658 root guide-section"><div id="module-packagejson" data-module-id="packagejson" class="jsx-3962230383"><div id="module-packagejson-anchor" class="jsx-3962230383 anchor"></div><h2 data-css-nypl32="">Package.json</h2><div class="jsx-3796526469"><div><div><p><a href="https://docs.npmjs.com/files/package.json" data-css-wr5axw="">Package.json</a> looks like:</p></div></div><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-json" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">2</span><span>  </span><span class="token" style="color:#E695BD">"name"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"ApplicationName"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">3</span><span>  </span><span class="token" style="color:#E695BD">"version"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"0.0.1"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">4</span><span>  </span><span class="token" style="color:#E695BD">"description"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"Application Description"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">5</span><span>  </span><span class="token" style="color:#E695BD">"main"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"server.js"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">6</span><span>  </span><span class="token" style="color:#E695BD">"scripts"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">7</span><span>    </span><span class="token" style="color:#E695BD">"start"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"node server.js"</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">8</span><span>  </span><span class="token" style="color:#F2F2F2">}</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">9</span><span>  </span><span class="token" style="color:#E695BD">"repository"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">10</span><span>    </span><span class="token" style="color:#E695BD">"type"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"git"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">11</span><span>    </span><span class="token" style="color:#E695BD">"url"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"https://github.com/npm/npm.git"</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">12</span><span>  </span><span class="token" style="color:#F2F2F2">}</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">13</span><span>  </span><span class="token" style="color:#E695BD">"dependencies"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">14</span><span>    </span><span class="token" style="color:#E695BD">"express"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"~3.0.1"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">15</span><span>    </span><span class="token" style="color:#E695BD">"sequelize"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"latest"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">16</span><span>    </span><span class="token" style="color:#E695BD">"q"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"latest"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">17</span><span>    </span><span class="token" style="color:#E695BD">"tedious"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"latest"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">18</span><span>    </span><span class="token" style="color:#E695BD">"angular"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"latest"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">19</span><span>    </span><span class="token" style="color:#E695BD">"angular-ui-router"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"~0.2.11"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">20</span><span>    </span><span class="token" style="color:#E695BD">"path"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"latest"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">21</span><span>    </span><span class="token" style="color:#E695BD">"dat-gui"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"latest"</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">22</span><span>  </span><span class="token" style="color:#F2F2F2">}</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">23</span><span></span><span class="token" style="color:#F2F2F2">}</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">json</div></div></div><div><div><p>The
+ most important things in your package.json are name and version. Those 
+are actually required, and your package won't install without them. The 
+name and version together form an identifier that is assumed to be 
+completely unique. Changes to the package should come along with changes
+ to the version.</p></div></div><h3 data-css-1ez5vuk="">Repository</h3><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-json" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">2</span><span>  </span><span class="token" style="color:#E695BD">"repository"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">3</span><span>    </span><span class="token" style="color:#E695BD">"type"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"git"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">4</span><span>    </span><span class="token" style="color:#E695BD">"url"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"https://github.com/npm/npm.git"</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">5</span><span>  </span><span class="token" style="color:#F2F2F2">}</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">6</span><span></span><span class="token" style="color:#F2F2F2">}</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">json</div></div></div><div><div><p>Specify
+ the place where your code lives. Through this repository, developers 
+can reach out and contribute to your application. If the git repository 
+is not GitHub, then the <span class="jsx-3120878690"><code data-css-geztkt="">npm docs</code></span> command will be able to find you.</p></div></div><h3 data-css-1ez5vuk="">Scripts</h3><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-json" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">2</span><span> </span><span class="token" style="color:#E695BD">"scripts"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">3</span><span>    </span><span class="token" style="color:#E695BD">"start"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"node server.js"</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">4</span><span>  </span><span class="token" style="color:#F2F2F2">}</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">5</span><span></span><span class="token" style="color:#F2F2F2">}</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">json</div></div></div><div><div><p>NPM provide many useful <a href="https://docs.npmjs.com/misc/scripts" data-css-wr5axw="">Scripts</a> like <span class="jsx-3120878690"><code data-css-geztkt="">npm install</code></span>, <span class="jsx-3120878690"><code data-css-geztkt="">npm start</code></span>, <span class="jsx-3120878690"><code data-css-geztkt="">npm stop</code></span> etc.</p></div></div><div><div><p>Some default script values are based on package contents.</p></div></div><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-json" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#E695BD">"start"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"node server.js"</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">json</div></div></div><div><div><p>If there is a server.js file in the root of your package, then npm will default the start command to node server.js.</p></div></div><h3 data-css-1ez5vuk="">Dependencies</h3><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-json" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">2</span><span></span><span class="token" style="color:#E695BD">"dependencies"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">3</span><span>    </span><span class="token" style="color:#E695BD">"express"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"~3.0.1"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">4</span><span>    </span><span class="token" style="color:#E695BD">"sequelize"</span><span class="token" style="color:#F2F2F2">:</span><span class="token" style="color:#B8CC7A">"latest"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">5</span><span>    </span><span class="token" style="color:#E695BD">"q"</span><span class="token" style="color:#F2F2F2">:</span><span class="token" style="color:#B8CC7A">"latest"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">6</span><span>    </span><span class="token" style="color:#E695BD">"tedious"</span><span class="token" style="color:#F2F2F2">:</span><span class="token" style="color:#B8CC7A">"latest"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">7</span><span>    </span><span class="token" style="color:#E695BD">"angular"</span><span class="token" style="color:#F2F2F2">:</span><span class="token" style="color:#B8CC7A">"latest"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">8</span><span>    </span><span class="token" style="color:#E695BD">"angular-ui-router"</span><span class="token" style="color:#F2F2F2">:</span><span> </span><span class="token" style="color:#B8CC7A">"~0.2.11"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">9</span><span>    </span><span class="token" style="color:#E695BD">"path"</span><span class="token" style="color:#F2F2F2">:</span><span class="token" style="color:#B8CC7A">"latest"</span><span class="token" style="color:#F2F2F2">,</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">10</span><span>    </span><span class="token" style="color:#E695BD">"dat-gui"</span><span class="token" style="color:#F2F2F2">:</span><span class="token" style="color:#B8CC7A">"latest"</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">11</span><span>  </span><span class="token" style="color:#F2F2F2">}</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">12</span><span></span><span class="token" style="color:#F2F2F2">}</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">json</div></div></div><div><div><p><a href="https://docs.npmjs.com/files/package.json#dependencies" data-css-wr5axw="">Dependencies</a> are specified in a simple object that maps a package name to a version range.
+Version Name must be Version exactly.</p></div></div><div><div><p>If you want to install the latest version of a file, you just have to put <span class="jsx-3120878690"><code data-css-geztkt="">latest</code></span> in place of the version name.</p></div></div><div><div><p>Tilde(~) is used to tell "Approximately equivalent to version".</p></div></div></div></div></div><div class="jsx-2407523658 root guide-section"><div id="module-basicexample" data-module-id="basicexample" class="jsx-3962230383"><div id="module-basicexample-anchor" class="jsx-3962230383 anchor"></div><h2 data-css-nypl32="">Basic Example</h2><div class="jsx-3796526469"><div><div><p>Create a server.js javascript file with following code</p></div></div><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-js" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#AAAAAA">/*server.js*/</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">2</span>
+<span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">3</span><span></span><span class="token" style="color:#F26D6D">const</span><span> http </span><span class="token" style="color:#F2F2F2">=</span><span> </span><span class="token" style="color:#8AC7E6">require</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#B8CC7A">'http'</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">4</span>
+<span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">5</span><span></span><span class="token" style="color:#F26D6D">const</span><span> hostname </span><span class="token" style="color:#F2F2F2">=</span><span> </span><span class="token" style="color:#B8CC7A">'127.0.0.1'</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">6</span><span></span><span class="token" style="color:#F26D6D">const</span><span> port </span><span class="token" style="color:#F2F2F2">=</span><span> </span><span class="token" style="color:#FF9466">3000</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">7</span>
+<span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">8</span><span></span><span class="token" style="color:#F26D6D">const</span><span> server </span><span class="token" style="color:#F2F2F2">=</span><span> http</span><span class="token" style="color:#F2F2F2">.</span><span class="token method property-access" style="color:#8AC7E6">createServer</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#F26D6D">function</span><span class="token" style="color:#F2F2F2">(</span><span class="token parameter">req</span><span class="token parameter" style="color:#F2F2F2">,</span><span class="token parameter"> res</span><span class="token" style="color:#F2F2F2">)</span><span> </span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">9</span><span>  res</span><span class="token" style="color:#F2F2F2">.</span><span class="token property-access">statusCode</span><span> </span><span class="token" style="color:#F2F2F2">=</span><span> </span><span class="token" style="color:#FF9466">200</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">10</span><span>  res</span><span class="token" style="color:#F2F2F2">.</span><span class="token method property-access" style="color:#8AC7E6">setHeader</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#B8CC7A">'Content-Type'</span><span class="token" style="color:#F2F2F2">,</span><span> </span><span class="token" style="color:#B8CC7A">'text/plain'</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">11</span><span>  res</span><span class="token" style="color:#F2F2F2">.</span><span class="token method property-access" style="color:#8AC7E6">end</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#B8CC7A">'Hello World\n'</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">12</span><span></span><span class="token" style="color:#F2F2F2">}</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">13</span>
+<span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">14</span><span>server</span><span class="token" style="color:#F2F2F2">.</span><span class="token method property-access" style="color:#8AC7E6">listen</span><span class="token" style="color:#F2F2F2">(</span><span>port</span><span class="token" style="color:#F2F2F2">,</span><span> hostname</span><span class="token" style="color:#F2F2F2">,</span><span> </span><span class="token" style="color:#F26D6D">function</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#F2F2F2">)</span><span> </span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">15</span><span>  </span><span class="token console class-name">console</span><span class="token" style="color:#F2F2F2">.</span><span class="token method property-access" style="color:#8AC7E6">log</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#B8CC7A">'Server running at http://'</span><span class="token" style="color:#F2F2F2">+</span><span> hostname </span><span class="token" style="color:#F2F2F2">+</span><span> </span><span class="token" style="color:#B8CC7A">':'</span><span> </span><span class="token" style="color:#F2F2F2">+</span><span> port </span><span class="token" style="color:#F2F2F2">+</span><span> </span><span class="token" style="color:#B8CC7A">'/'</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:3.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">16</span><span></span><span class="token" style="color:#F2F2F2">}</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">js</div></div></div><div><div><p>As we need <span class="jsx-3120878690"><code data-css-geztkt="">http</code></span> to create an http server we use <span class="jsx-3120878690"><code data-css-geztkt="">require('http')</code></span> and pass it to a variable named <span class="jsx-3120878690"><code data-css-geztkt="">http</code></span></p></div></div><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-js" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#F26D6D">var</span><span> http </span><span class="token" style="color:#F2F2F2">=</span><span> </span><span class="token" style="color:#8AC7E6">require</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#B8CC7A">'http'</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">js</div></div></div><div><div><p>We also need to defined hostname and port number, here we use <span class="jsx-3120878690"><code data-css-geztkt="">localHost</code></span> i.e <span class="jsx-3120878690"><code data-css-geztkt="">127.0.0.1</code></span> and <span class="jsx-3120878690"><code data-css-geztkt="">port</code></span> number <span class="jsx-3120878690"><code data-css-geztkt="">3000</code></span> and assign this to the variables <span class="jsx-3120878690"><code data-css-geztkt="">hostname</code></span> and <span class="jsx-3120878690"><code data-css-geztkt="">port</code></span>, respectively.</p></div></div><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-js" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#F26D6D">var</span><span> hostname </span><span class="token" style="color:#F2F2F2">=</span><span> </span><span class="token" style="color:#B8CC7A">'127.0.0.1'</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">2</span><span></span><span class="token" style="color:#F26D6D">var</span><span> port </span><span class="token" style="color:#F2F2F2">=</span><span> </span><span class="token" style="color:#FF9466">3000</span><span class="token" style="color:#F2F2F2">;</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">js</div></div></div><div><div><p>Next we create the http server using the <span class="jsx-3120878690"><code data-css-geztkt="">createServer</code></span> method.</p></div></div><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-js" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#F26D6D">var</span><span> server </span><span class="token" style="color:#F2F2F2">=</span><span> http</span><span class="token" style="color:#F2F2F2">.</span><span class="token method property-access" style="color:#8AC7E6">createServer</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#F26D6D">function</span><span class="token" style="color:#F2F2F2">(</span><span class="token parameter">req</span><span class="token parameter" style="color:#F2F2F2">,</span><span class="token parameter"> res</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">2</span><span>    res</span><span class="token" style="color:#F2F2F2">.</span><span class="token property-access">statusCode</span><span> </span><span class="token" style="color:#F2F2F2">=</span><span> </span><span class="token" style="color:#FF9466">200</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">3</span><span>    res</span><span class="token" style="color:#F2F2F2">.</span><span class="token method property-access" style="color:#8AC7E6">setHeader</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#B8CC7A">'Content-Type'</span><span class="token" style="color:#F2F2F2">,</span><span> </span><span class="token" style="color:#B8CC7A">'text/plain'</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">4</span><span>    res</span><span class="token" style="color:#F2F2F2">.</span><span class="token method property-access" style="color:#8AC7E6">end</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#B8CC7A">'Hello World\n'</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">5</span><span></span><span class="token" style="color:#F2F2F2">}</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">js</div></div></div><div><div><p>This created the server as well as a response having <span class="jsx-3120878690"><code data-css-geztkt="">statusCode: 200</code></span>, <span class="jsx-3120878690"><code data-css-geztkt="">Content-Type</code></span> header of plain text and and ends with the string <span class="jsx-3120878690"><code data-css-geztkt="">Hello World</code></span>. This is the response that the server can send to browser.</p></div></div><blockquote class="jsx-3026484133"><div><div><p>the function has two parameters <span class="jsx-3120878690"><code data-css-geztkt="">req</code></span> and <span class="jsx-3120878690"><code data-css-geztkt="">res</code></span> which is the <span class="jsx-3120878690"><code data-css-geztkt="">request</code></span> from and <span class="jsx-3120878690"><code data-css-geztkt="">response</code></span> to the server, respectively.</p></div></div></blockquote><div><div><p>In our example we are creating responses.</p></div></div><div><div><p>We created the server, now we have to assign it a hostname and port number.</p></div></div><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-js" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span>server</span><span class="token" style="color:#F2F2F2">.</span><span class="token method property-access" style="color:#8AC7E6">listen</span><span class="token" style="color:#F2F2F2">(</span><span>port</span><span class="token" style="color:#F2F2F2">,</span><span> hostname</span><span class="token" style="color:#F2F2F2">,</span><span> </span><span class="token" style="color:#F26D6D">function</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#F2F2F2">)</span><span> </span><span class="token" style="color:#F2F2F2">{</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">2</span><span>  </span><span class="token console class-name">console</span><span class="token" style="color:#F2F2F2">.</span><span class="token method property-access" style="color:#8AC7E6">log</span><span class="token" style="color:#F2F2F2">(</span><span class="token" style="color:#B8CC7A">'Server running at http://'</span><span class="token" style="color:#F2F2F2">+</span><span> hostname </span><span class="token" style="color:#F2F2F2">+</span><span> </span><span class="token" style="color:#B8CC7A">':'</span><span> </span><span class="token" style="color:#F2F2F2">+</span><span> port </span><span class="token" style="color:#F2F2F2">+</span><span> </span><span class="token" style="color:#B8CC7A">'/'</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span><span>
+</span><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:2.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">3</span><span></span><span class="token" style="color:#F2F2F2">}</span><span class="token" style="color:#F2F2F2">)</span><span class="token" style="color:#F2F2F2">;</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">js</div></div></div><div><div><p>Here, the server listens to localhost on port 3000 and prints "Server running at <a href="http://127.0.0.1:3000/" data-css-wr5axw="">http://127.0.0.1:3000/</a>" in command prompt.</p></div></div><div><div><p>Now Run server.js file un node using command</p></div></div><div><div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="jsx-1296640189 root"><pre style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1.7142857142857142rem;margin:.5em 0;overflow:auto;background:#1E2429;border-radius:0.14285714285714285rem;padding-left:0;overflow-wrap:normal"><code class="language-bash" style="color:#F2F2F2;font-family:monospace, Consolas, Monaco, 'Andale Mono';direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none;color:#AAAAAA">1</span><span class="token" style="color:#F2F2F2">&gt;</span><span> </span><span class="token" style="color:#8AC7E6">node</span><span> server</span></code></pre><div itemprop="programmingLanguage" class="jsx-1296640189 language">bash</div></div></div><div><div><p>Open a browser and enter url <a href="http://127.0.0.1:3000/" data-css-wr5axw="">http://127.0.0.1:3000/</a>. The browser will display <strong>Hello World</strong> message on the screen.</p></div></div><div><div><p><img alt="description" src="Getting%20Started%20with%20Node%20JS%20_arquivos/b4eb365b-23f9-4fc1-b4a8-34b1b9b3e8e9.png" data-airgap-id="23"></p></div></div><div><div><p><img alt="description" src="Getting%20Started%20with%20Node%20JS%20_arquivos/cfaa1589-9a62-48eb-b3f5-3707d3d14a6d.png" data-airgap-id="24"></p></div></div></div></div></div><div class="jsx-2744003040 sticky-upvote-positioner"><div class="sticky sticky-upvote" style="position: fixed; top: 0px;"><button data-ui-upvote="true" class="jsx-3924422583 root non-mobile-upvote"><div class="jsx-3924422583 inner"><div data-css-7dab2f=""><svg aria-label="thumb up icon" viewBox="0 0 24 24" role="img"><path fill-rule="evenodd" d="M9.4 8.5c-.29.072-.788.197-1.42.298A1 1 0 007 8H3a1 1 0 00-1 1v11a1 1 0 001 1h4a1 1 0 00.927-.624c.52.162.811.262.873.324l.3.1c1.6.6 3.4 1.2 5.9 1.2h4.2c1.6 0 2.8-1.2 2.8-2.8v-.3c.3-.3 1-1 1-2.2 0-.7-.1-1.1-.3-1.5l.034-.1c.105-.306.266-.773.266-1.4 0-.627-.16-1.094-.266-1.4a11.768 11.768 0 01-.034-.1l.039-.113c.105-.305.261-.757.261-1.287C23 9.3 21.7 8 20.2 8h-2.035c-.349 0-.596-.352-.523-.693.148-.695.202-1.524.202-2.407 0-1.4-.382-2.145-1.047-2.884A3.11 3.11 0 0014.453.969c-1.422 0-2.375.125-2.375 1.547v.243c.004.73.009 1.869-.178 2.941-.2.9-.529 1.577-1.025 2.05-.261.249-.775.55-1.475.75zM19.2 20c.5 0 .8-.3.8-.8v-.4c0-.71.298-1.002.569-1.268.225-.22.431-.423.431-.832 0-.495-.121-.718-.23-.918-.09-.164-.17-.312-.17-.582 0-.278.086-.45.178-.632.107-.212.222-.44.222-.868 0-.429-.115-.656-.221-.868-.093-.183-.179-.354-.179-.632 0-.33.121-.6.23-.842.09-.198.17-.378.17-.558 0-.4-.4-.8-.8-.8H18c-.844 0-1.488-.44-1.844-.938-.355-.497-.508-1.062-.453-1.859.007-.105.02-.22.035-.357.043-.401.106-.977.106-1.946 0-.867-.263-1.923-1.563-1.923-.148 0-.281.054-.281.223 0 .9 0 1.9-.2 2.8-.2 1.1-.6 2.2-1.6 3.2-.6.6-1.5 1-2.3 1.3-.45.15-1.239.3-1.9.408V18.3l1.5.5c.05 0 .1.025.15.05.05.025.1.05.15.05 1.5.6 2.9 1.1 5.2 1.1h4.2zM6 10H4v9h2v-9z"></path></svg></div><p data-ui-upvote-count="true" class="jsx-3924422583">396</p></div></button></div></div></div></div></section></div></div><div class="jsx-4187209642 root"><svg width="551" height="100" viewBox="0 0 551 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.76 34H26.532V25.2H12.056V3.2H1.76V34ZM28.8753 34H39.1713V3.2H28.8753V34ZM42.7952 34H53.0912V27.444L55.7312 24.232L61.7592 34H74.0352L63.0792 16.576L73.8152 3.2H61.8472L53.0912 14.728V3.2H42.7952V34ZM74.9358 34H101.424V25.552H85.0558V22.208H100.104V14.772H85.0558V11.648H101.204V3.2H74.9358V34ZM123.685 34.22H132.661L138.073 18.908L143.485 34.22H152.461L162.537 3.2H151.933L147.577 17.984L142.605 3.112H133.717L128.745 17.984L124.389 3.2H113.609L123.685 34.22ZM164.311 34H174.607V22.956H184.023V34H194.319V3.2H184.023V14.068H174.607V3.2H164.311V34ZM195.582 34H206.582L208.166 29.864H218.946L220.574 34H231.75L218.77 2.98H208.562L195.582 34ZM210.762 22.56L213.578 15.08L216.394 22.56H210.762ZM236.941 34H247.237V11.912H256.301V3.2H227.877V11.912H236.941V34ZM278.951 34H289.247V22.956L300.863 3.2H289.467L284.143 13.32L278.863 3.2H267.335L278.951 23.088V34ZM314.906 34.66C324.41 34.66 331.758 27.532 331.758 18.6V18.512C331.758 9.58 324.498 2.54 314.994 2.54C305.49 2.54 298.142 9.668 298.142 18.6V18.688C298.142 27.62 305.402 34.66 314.906 34.66ZM314.994 25.552C311.034 25.552 308.526 22.252 308.526 18.6V18.512C308.526 14.904 310.99 11.648 314.906 11.648C318.866 11.648 321.374 14.948 321.374 18.6V18.688C321.374 22.296 318.91 25.552 314.994 25.552ZM349.425 34.616C358.621 34.616 364.737 30.48 364.737 19.964V3.2H354.265V20.272C354.265 24.012 352.285 25.508 349.513 25.508C346.741 25.508 344.761 23.88 344.761 20.052V3.2H334.289V20.184C334.289 30.392 340.229 34.616 349.425 34.616ZM392.399 34.572C400.671 34.572 405.995 30.612 405.995 24.144V24.056C405.995 17.852 400.715 15.564 392.839 14.112C389.583 13.496 388.747 12.968 388.747 12.132V12.044C388.747 11.296 389.451 10.768 390.991 10.768C393.851 10.768 397.327 11.692 400.231 13.804L405.247 6.852C401.683 4.036 397.283 2.628 391.343 2.628C382.851 2.628 378.275 7.16 378.275 13.012V13.1C378.275 19.612 384.347 21.592 391.255 23C394.555 23.66 395.523 24.144 395.523 25.024V25.112C395.523 25.948 394.731 26.432 392.883 26.432C389.275 26.432 385.447 25.376 382.103 22.824L376.603 29.38C380.519 32.812 386.151 34.572 392.399 34.572ZM408.373 34H434.861V25.552H418.493V22.208H433.541V14.772H418.493V11.648H434.641V3.2H408.373V34ZM437.635 34H464.123V25.552H447.755V22.208H462.803V14.772H447.755V11.648H463.903V3.2H437.635V34ZM473.321 24.408H479.437L479.965 21.46C484.981 20.008 488.457 17.588 488.457 12.088V12C488.457 6.368 483.705 2.672 477.149 2.672C471.825 2.672 467.953 4.608 465.137 7.116L469.889 14.244C472.045 12.572 474.465 11.472 476.137 11.472C477.809 11.472 478.733 12.176 478.733 13.188V13.232C478.733 14.64 477.281 15.652 472.617 16.268L472.089 16.796L473.321 24.408ZM471.121 34H481.329V26.08H471.121V34ZM9.636 75H19.932V52.912H28.996V44.2H0.572V52.912H9.636V75ZM31.3225 75H41.6185V63.956H51.0345V75H61.3305V44.2H51.0345V55.068H41.6185V44.2H31.3225V75ZM64.8381 75H91.3261V66.552H74.9581V63.208H90.0061V55.772H74.9581V52.648H91.1061V44.2H64.8381V75ZM94.0998 75H104.396V66.2H106.596L112.404 75H124.152L116.98 64.528C120.72 62.724 123.052 59.6 123.052 55.112V55.024C123.052 51.856 122.084 49.568 120.236 47.72C118.08 45.564 114.604 44.2 109.148 44.2H94.0998V75ZM104.396 58.852V52.824H108.884C111.26 52.824 112.8 53.792 112.8 55.772V55.86C112.8 57.752 111.304 58.852 108.84 58.852H104.396ZM125.553 75H152.041V66.552H135.673V63.208H150.721V55.772H135.673V52.648H151.821V44.2H125.553V75ZM154.551 61.888C160.271 61.624 164.451 59.468 164.451 52.252V44.2H154.243V54.32H158.247C158.247 56.564 156.619 57.884 153.759 58.236L154.551 61.888ZM180.477 75.572C188.749 75.572 194.073 71.612 194.073 65.144V65.056C194.073 58.852 188.793 56.564 180.917 55.112C177.661 54.496 176.825 53.968 176.825 53.132V53.044C176.825 52.296 177.529 51.768 179.069 51.768C181.929 51.768 185.405 52.692 188.309 54.804L193.325 47.852C189.761 45.036 185.361 43.628 179.421 43.628C170.929 43.628 166.353 48.16 166.353 54.012V54.1C166.353 60.612 172.425 62.592 179.333 64C182.633 64.66 183.601 65.144 183.601 66.024V66.112C183.601 66.948 182.809 67.432 180.961 67.432C177.353 67.432 173.525 66.376 170.181 63.824L164.681 70.38C168.597 73.812 174.229 75.572 180.477 75.572ZM207.623 75H217.699V59.732L224.783 70.688H224.959L232.043 59.732V75H242.295V44.2H231.559L224.959 55.024L218.359 44.2H207.623V75ZM261.883 75.66C271.387 75.66 278.735 68.532 278.735 59.6V59.512C278.735 50.58 271.475 43.54 261.971 43.54C252.467 43.54 245.119 50.668 245.119 59.6V59.688C245.119 68.62 252.379 75.66 261.883 75.66ZM261.971 66.552C258.011 66.552 255.503 63.252 255.503 59.6V59.512C255.503 55.904 257.967 52.648 261.883 52.648C265.843 52.648 268.351 55.948 268.351 59.6V59.688C268.351 63.296 265.887 66.552 261.971 66.552ZM281.53 75H291.826V66.2H294.026L299.834 75H311.582L304.41 64.528C308.15 62.724 310.482 59.6 310.482 55.112V55.024C310.482 51.856 309.514 49.568 307.666 47.72C305.51 45.564 302.034 44.2 296.578 44.2H281.53V75ZM291.826 58.852V52.824H296.314C298.69 52.824 300.23 53.792 300.23 55.772V55.86C300.23 57.752 298.734 58.852 296.27 58.852H291.826ZM312.983 75H339.471V66.552H323.103V63.208H338.151V55.772H323.103V52.648H339.251V44.2H312.983V75ZM345.104 65.408H350.12L353.2 50.8V44.2H342.024V50.8L345.104 65.408ZM342.508 75H352.716V67.08H342.508V75Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M340.044 85.2682C341.507 85.0006 342.863 84.6363 344.226 84.5446C344.951 84.495 345.79 84.5669 346.391 85.2087C347.251 86.1306 348.041 85.8258 348.917 85.7961C350.655 85.7391 352.398 85.9919 354.131 86.262C354.441 86.3116 354.72 87.0575 355.132 87.6523C354.432 90.75 353.001 91.3572 351.504 91.6819C350.765 91.8405 349.978 91.5654 349.274 91.9198C345.819 93.6496 342.304 93.3447 338.789 93.2977C331.506 93.201 324.222 93.1093 316.938 93.1093C307.386 93.1068 297.83 92.9036 288.283 93.3125C275.714 93.8553 263.156 95.1514 250.588 95.6693C238.508 96.1674 226.503 98.6531 214.452 99.8352C212.075 100.068 209.674 100.078 207.305 99.7088C205.701 99.4635 205.119 96.1352 206.175 93.771C206.526 92.9804 207.208 92.4501 207.773 92.3138C209.143 91.9842 210.537 92.0412 211.914 91.7884C221.176 90.0859 230.435 88.3437 239.695 86.6139C239.821 86.5891 239.944 86.5296 240.07 86.5172C247.961 85.7787 255.853 85.0377 263.744 84.3091C273.393 83.4195 283.042 82.5347 292.691 81.6599C293.317 81.6029 293.959 81.4865 294.574 81.6574C299.709 83.0899 304.843 81.6401 309.976 81.7665C313.108 81.8433 316.247 80.8372 319.371 81.997C319.617 82.0887 319.881 82.215 320.12 82.1382C325.497 80.453 330.894 82.5496 336.278 81.826C337.859 81.6128 339.328 82.1234 340.044 85.2682Z" fill="url(#paint0_linear)"></path><defs><linearGradient id="paint0_linear" x1="205.642" y1="81.4346" x2="331.643" y2="145.907" gradientUnits="userSpaceOnUse"><stop stop-color="#EC008B"></stop><stop offset="1" stop-color="#F15A22"></stop></linearGradient></defs></svg><a style="background:linear-gradient(90deg, #E80A89 0%, #F15B2A 100%)" href="https://www.pluralsight.com/product/paths" data-css-y5dqt5=""><span data-css-15b13by="" aria-hidden="false">LEARN MORE</span></a></div><div class="jsx-170148238 iframeContainer"><iframe src="Getting%20Started%20with%20Node%20JS%20_arquivos/footer-only.html" class="jsx-170148238 iframe" data-airgap-id="25"></iframe></div><div><script async="" type="text/javascript">!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+  analytics.load("n2LLbFI1MDxFKBLzI0es2Z7PrDhu6jEA");
+  }}();</script><script src="Getting%20Started%20with%20Node%20JS%20_arquivos/analytics-facade.v4.7.11.js" data-airgap-id="5"></script><div data-ui-js-is-loaded="true" style="display: none;"></div><script type="text/javascript">if (_satellite) {_satellite.pageBottom();}</script></div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"guide":{"id":"03120bd7-4505-4dc6-a863-eb279fc67ce1","slug":"getting-started-with-nodejs","status":"published","authorFullName":"Gaurav Bhavsar","authorAvatarUrl":"https://avatars.githubusercontent.com/u/5441386?v=3","lastPublishedAt":"2019-01-10T20:28:58.346Z","title":"Getting Started with NodeJS","tags":["Node.js"],"metaTitle":"Getting Started with Node JS | Pluralsight","metaDescription":"Want to learn Node JS? In this guide we are going to introduce Node JS with Node Package Module (NPM) through a step by step basic implementation and explanation. Get started using Node JS Today!","minutesToRead":7,"modules":[{"title":"Introduction","body":"In this article, I am going to introduce NodeJS with Node Package Module (NPM), step-by-step basic implementation and explanation.\n\nThis article covers the following areas of NodeJS.\n\n* Introduction of NodeJS\n* Installation of NodeJS and NPM\n* Node Package Module (NPM)\n* Package.json\n* Basic Example"},{"title":"NodeJS","body":"[NodeJS](https://nodejs.org/en/) is an open-source, cross-platform runtime environment for developing server-side web applications. NodeJS also has an event-driven architecture capable of [asynchronous I/O](https://en.wikipedia.org/wiki/Asynchronous_I/O).\n\nNodeJS uses an event-driven, non-blocking I/O model that makes it lightweight and efficient."},{"title":"Installation of NodeJS and NPM","body":"Installation of NodeJS and NPM is straightforward using the installer package available at NodeJS official web site.\n\n* Download the installer from [NodeJS WebSite](https://nodejs.org/en/).\n* Run the installer.\n* Follow the installer steps, agree the license agreement and click the next button.\n* Restart your system/machine.\n\nNow, test NodeJS by printing its version using the following command in Command Prompt:\n\n```bash\n\u003e node -v\n```\n\nand test npm by printing its version using command\n\n```bash\n\u003e npm -v\n```\n\nSimple way to test nodeJS work in your system is to create a javascript file which print a message.\n\nLets create test.js file\n\n```js\n/*test.js file*/\nconsole.log(\"Node is working\");\n```\n\nRun the test.js file using Node command `\u003e node test.js` in command prompt.\n\n![description](https://raw.githubusercontent.com/pluralsight/guides/master/images/640f8199-be76-4848-a093-0f9e2825d8a8.png)\n\nYou are done with installation."},{"title":"Node Package Module","body":"[NPM](https://www.npmjs.com/) is the package module which helps javascript developers load dependencies effectively. To load dependencies we just have to run a command in command prompt:\n\n```bash\n\u003e npm install\n```\n\nThis command is finding a json file named as `package.json` in root directory to install all dependencies defined in the file."},{"title":"Package.json","body":"[Package.json](https://docs.npmjs.com/files/package.json) looks like:\n\n```json\n{\n  \"name\": \"ApplicationName\",\n  \"version\": \"0.0.1\",\n  \"description\": \"Application Description\",\n  \"main\": \"server.js\",\n  \"scripts\": {\n    \"start\": \"node server.js\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/npm/npm.git\"\n  },\n  \"dependencies\": {\n    \"express\": \"~3.0.1\",\n    \"sequelize\": \"latest\",\n    \"q\": \"latest\",\n    \"tedious\": \"latest\",\n    \"angular\": \"latest\",\n    \"angular-ui-router\": \"~0.2.11\",\n    \"path\": \"latest\",\n    \"dat-gui\": \"latest\"\n  }\n}\n```\n\nThe most important things in your package.json are name and version. Those are actually required, and your package won't install without them. The name and version together form an identifier that is assumed to be completely unique. Changes to the package should come along with changes to the version.\n\n### Repository\n\n```json\n{\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/npm/npm.git\"\n  }\n}\n```\n\nSpecify the place where your code lives. Through this repository, developers can reach out and contribute to your application. If the git repository is not GitHub, then the `npm docs` command will be able to find you.\n\n### Scripts\n\n```json\n{\n \"scripts\": {\n    \"start\": \"node server.js\"\n  }\n}\n```\n\nNPM provide many useful [Scripts](https://docs.npmjs.com/misc/scripts) like `npm install`, `npm start`, `npm stop` etc.\n\nSome default script values are based on package contents.\n\n```json\n\"start\": \"node server.js\"\n```\n\nIf there is a server.js file in the root of your package, then npm will default the start command to node server.js.\n\n### Dependencies\n\n```json\n{\n\"dependencies\": {\n    \"express\": \"~3.0.1\",\n    \"sequelize\":\"latest\",\n    \"q\":\"latest\",\n    \"tedious\":\"latest\",\n    \"angular\":\"latest\",\n    \"angular-ui-router\": \"~0.2.11\",\n    \"path\":\"latest\",\n    \"dat-gui\":\"latest\"\n  }\n}\n```\n\n[Dependencies](https://docs.npmjs.com/files/package.json#dependencies) are specified in a simple object that maps a package name to a version range.\nVersion Name must be Version exactly.\n\nIf you want to install the latest version of a file, you just have to put `latest` in place of the version name.\n\nTilde(~) is used to tell \"Approximately equivalent to version\"."},{"title":"Basic Example","body":"Create a server.js javascript file with following code\n\n```js\n/*server.js*/\n\nconst http = require('http');\n\nconst hostname = '127.0.0.1';\nconst port = 3000;\n\nconst server = http.createServer(function(req, res) {\n  res.statusCode = 200;\n  res.setHeader('Content-Type', 'text/plain');\n  res.end('Hello World\\n');\n});\n\nserver.listen(port, hostname, function() {\n  console.log('Server running at http://'+ hostname + ':' + port + '/');\n});\n```\n\nAs we need `http` to create an http server we use `require('http')` and pass it to a variable named `http`\n\n```js\nvar http = require('http');\n```\n\nWe also need to defined hostname and port number, here we use `localHost` i.e `127.0.0.1` and `port` number `3000` and assign this to the variables `hostname` and `port`, respectively.\n\n```js\nvar hostname = '127.0.0.1';\nvar port = 3000;\n```\n\nNext we create the http server using the `createServer` method.\n\n```js\nvar server = http.createServer(function(req, res){\n    res.statusCode = 200;\n    res.setHeader('Content-Type', 'text/plain');\n    res.end('Hello World\\n');\n});\n```\n\nThis created the server as well as a response having `statusCode: 200`, `Content-Type` header of plain text and and ends with the string `Hello World`. This is the response that the server can send to browser.\n\n\u003e the function has two parameters `req` and `res` which is the `request` from and `response` to the server, respectively.\n\nIn our example we are creating responses.\n\nWe created the server, now we have to assign it a hostname and port number.\n\n```js\nserver.listen(port, hostname, function() {\n  console.log('Server running at http://'+ hostname + ':' + port + '/');\n});\n```\n\nHere, the server listens to localhost on port 3000 and prints \"Server running at http://127.0.0.1:3000/\" in command prompt.\n\nNow Run server.js file un node using command\n\n```bash\n\u003e node server\n```\n\nOpen a browser and enter url http://127.0.0.1:3000/. The browser will display **Hello World** message on the screen.\n\n![description](https://raw.githubusercontent.com/pluralsight/guides/master/images/b4eb365b-23f9-4fc1-b4a8-34b1b9b3e8e9.png)\n\n![description](https://raw.githubusercontent.com/pluralsight/guides/master/images/cfaa1589-9a62-48eb-b3f5-3707d3d14a6d.png)"}],"loginRequired":false},"slug":"getting-started-with-nodejs","viewCount":203928,"upvoteCount":396,"success":true,"isLoggedIn":false,"userHandle":null,"flags":{}},"__N_SSP":true},"page":"/guides/guide","query":{"slug":"getting-started-with-nodejs"},"buildId":"-F1A1ZI8ofRjUI73qYnyh","assetPrefix":"/guides","runtimeConfig":{"isProd":true,"apiEndpointExternal":"https://app.pluralsight.com/guides/api","segmentWriteKey":"n2LLbFI1MDxFKBLzI0es2Z7PrDhu6jEA","dtmUrl":"//assets.adobedtm.com/08e39cddbedb/e636e43250a6/launch-b12e2e8e4ced.min.js","uiBaseUrl":"https://www.pluralsight.com","appHost":"app.pluralsight.com","publicHost":"www.pluralsight.com","newRelicEnabled":true,"signInUrl":"https://app.pluralsight.com/id","signUpUrl":"https://app.pluralsight.com/id/createaccount/guides","signOutUrl":"https://app.pluralsight.com/id/signout","cookieDomain":"pluralsight.com","wwwPromoUrl":"https://www.pluralsight.com/utilities/promo-only?noLaunch=true","wwwFooterUrl":"https://www.pluralsight.com/utilities/footer-only?noLaunch=true","searchToken":"c2998520-888f-4a65-a63f-f9b0c4e02935","searchUrl":"https://app.pluralsight.com/search/api/v2/suggest?searchTerm=","prismNotificationUrl":"https://s2.pluralsight.com/communications/notifications.js","prismCssUrl":"//s2.pluralsight.com/prism/prism-bootstrap-18.x.css","prismJsUrl":"//s2.pluralsight.com/prism/prism-bootstrap-18.x.js","launchDarklyClientId":"5a7c7b5afd95332db01686a1","launchDarklyApiKey":"sdk-c675c1d8-7a9d-4516-b3e8-61c484bb8493","freeTrialUrl":"https://www.pluralsight.com/pricing/free-trial"},"isFallback":false,"gssp":true,"customServer":true,"ids":["fs9fst","19o89hk","g3x4fp","1gwvklx","amk6wt","15yp1t4","qnkvkp","y5dqt5","15b13by","1uk30vr","1ieon0s","lgo8yq","1ez0qa4","ovsjkc","q6kj99","1u9d2c9","q4lcrt","19mbihv","1tcm1ro","1fzxw5o","hqp99b","dkg1ym","1lu7sfl","1997kh1","7dab2f","k31qw2","q4kl4e","1s4wg44","nypl32","1ak2kcc","1ez5vuk","wr5axw","1o5pyzy","99i3tc","geztkt","1gbfzly","18tgvim","1rw3fmk","17nixd9","w0yocm","1r967oi","rltil5","7mw7i0","1n6hr0x","4pq93p","ctre2o","1suuvy1","17v14zz","1h00rme","19vzw9x","1a8dsip","1ctpnpd","1c6w75u","183v8n","piydn8","nu4y7h","tc8kwl","1r7f4pa","1bnk4mn","1nued41","c8tnxo","1klj2um","1iuvoh7","1kcrbi9","kykfz1","gbnukb","1pe5xb7","1q1xq2l","7zyoug","6wu9td","1s813js","riug09","3qevm5"],"scriptLoader":[]}</script><next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px none; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;"></p></next-route-announcer><script>_satellite["_runScript1"](function(event, target, Promise) {
+// Marketing Channel Sort Code - added July 13 2022 via DEXO-983:
+// This, along with Adobe Analytics settings, laregely drive our marketing attribution
+// If you want to make changes here or have any questions, please reach out to #ask-optimization-team in Slack, or the digital marketing development team via #dev-www
+// last updated 3/21
+
+/*! js-cookie v3.0.1 | MIT */
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e=e||self,function(){var n=e.Cookies,o=e.Cookies=t();o.noConflict=function(){return e.Cookies=n,o}}())}(this,(function(){"use strict";function e(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)e[o]=n[o]}return e}return function t(n,o){function r(t,r,i){if("undefined"!=typeof document){"number"==typeof(i=e({},o,i)).expires&&(i.expires=new Date(Date.now()+864e5*i.expires)),i.expires&&(i.expires=i.expires.toUTCString()),t=encodeURIComponent(t).replace(/%(2[346B]|5E|60|7C)/g,decodeURIComponent).replace(/[()]/g,escape);var c="";for(var u in i)i[u]&&(c+="; "+u,!0!==i[u]&&(c+="="+i[u].split(";")[0]));return document.cookie=t+"="+n.write(r,t)+c}}return Object.create({set:r,get:function(e){if("undefined"!=typeof document&&(!arguments.length||e)){for(var t=document.cookie?document.cookie.split("; "):[],o={},r=0;r<t.length;r++){var i=t[r].split("="),c=i.slice(1).join("=");try{var u=decodeURIComponent(i[0]);if(o[u]=n.read(c,u),e===u)break}catch(e){}}return e?o[e]:o}},remove:function(t,n){r(t,"",e({},n,{expires:-1}))},withAttributes:function(n){return t(this.converter,e({},this.attributes,n))},withConverter:function(n){return t(e({},this.converter,n),this.attributes)}},{attributes:{value:Object.freeze(o)},converter:{value:Object.freeze(n)}})}({read:function(e){return'"'===e[0]&&(e=e.slice(1,-1)),e.replace(/(%[\dA-F]{2})+/gi,decodeURIComponent)},write:function(e){return encodeURIComponent(e).replace(/%(2[346BF]|3[AC-F]|40|5[BDE]|60|7[BCD])/g,decodeURIComponent)}},{path:"/"})}));
+
+mscookiesObject = (function () {
+  const defaultDomain = '.pluralsight.com';
+  const defaultPath = '/';
+  const defaultDaysToLive = 90;
+
+  // sets the cookie
+  const setCookie = function (name, value, definedSettings) {
+    const settings = {
+      domain: defaultDomain,
+      path: defaultPath,
+      expires: defaultDaysToLive
+    };
+    Object.assign(settings, definedSettings);
+    // special case to let us use session cookies, falsy settings causing issues and we just need to remove the key for the library to set a session cookie
+    if(definedSettings.expires === 'session') {
+      delete settings.expires;
+    }
+    Cookies.set(name, value, settings);
+  };
+
+  // gets the value of the named cookie
+  const getCookie = function (name) {
+    return Cookies.get(name);
+  };
+
+  return {
+    getCookie: getCookie,
+    setCookie: setCookie
+  };
+}());
+
+psmcSort = (function() {
+  'use strict';
+  window.psData = window.psData || {};
+
+  // scoping
+  let marketingChannel = null;
+  let setBy = null;
+  let incomingUTM = {};
+  let incomingCookies = {};
+  let channelFound = false;
+  let cookiesExpired = false;
+  let utmCombinedStr, firstUTMs, mpid, aid, vid, shortUTM, referrer, referringDomain;
+
+  // config cookie settings
+  let cookieName = 'psmc_mc';
+  let setByCookieName = 'psmc_setby';
+  let expCookieName = 'psmc_expires';
+  let firstUTMsCookieName = 'psmc_first_utms';
+  let expirationDays = 90;
+
+  //UTM Params
+  const utmParams = ['utm_medium', 'utm_source', 'utm_campaign', 'utm_term', 'utm_content'];
+  const shortUTMParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content']; // switching to include both utm_campaign and utm_content as of 9/23
+  const utmDelimiter = '|';
+  const utmPlaceholder = '';
+
+  const partnerAIDs = [
+    '7014Q000002GgtzQAC',
+    '7014Q000002Ggu9QAC',
+    '7014Q0000022aHoQAI',
+    '701j0000002BK7DAAW',
+    '7010a000001xDURAA2'
+  ];
+
+  const emailDomainPieces = [
+    'outlook.live.com',
+    'mail.google.com',
+    'mail.yahoo.com',
+    'e.mail.ru',
+    'mail.qq.com',
+    'email.seznam.cz',
+    'mail.ru',
+    'temp-mail.org',
+    '10minutemail.com',
+    'trash-mail.com',
+    '.mail',
+    'mail.',
+    'email',
+  ];
+
+  const socialDomainPieces = [
+    'facebook.com',
+    'linkedin.com',
+    'twitter.com',
+    't.co',
+    'plus.google.com',
+    'orkut.com',
+    'friendster.com',
+    'livejournal.com',
+    'blogspot.com',
+    'wordpress.com',
+    'friendfeed.com',
+    'myspace.com',
+    'digg.com',
+    'reddit.com',
+    'stumbleupon.com',
+    'twine.com',
+    'yelp.com',
+    'mixx.com',
+    'delicious.com',
+    'tumblr.com',
+    'disqus.com',
+    'intensedebate.com',
+    'plurk.com',
+    'slideshare.net',
+    'backtype.com',
+    'netvibes.com',
+    'mister-wong.com',
+    'diigo.com',
+    'flixster.com',
+    'youtube.com',
+    'vimeo.com',
+    '12seconds.tv',
+    'zooomr.com',
+    'identi.ca',
+    'jaiku.com',
+    'flickr.com',
+    'imeem.com',
+    'dailymotion.com',
+    'photobucket.com',
+    'fotolog.com',
+    'smugmug.com',
+    'classmates.com',
+    'myyearbook.com',
+    'mylife.com',
+    'tagged.com',
+    'brightkite.com',
+    'ning.com',
+    'bebo.com',
+    'hi5.com',
+    'yuku.com',
+    'cafemom.com',
+    'xanga.com'
+  ];
+
+  const searchUTMPieces = [
+    'google',
+    'bing',
+    'msn',
+    'yahoo',
+    'yandex',
+    'escosia',
+    'duckduckgo',
+  ];
+
+  // may be a better way to handle these via wildcard for maintainability, but listing the top possibilities for now
+  const searchDomainPieces = [
+    'google.com',
+    'bing.com',
+    'yahoo.com',
+    'baidu.com',
+    'yandex.ru',
+    'duckduckgo.com',
+    'google.co.in',
+    'google.co.uk',
+    'google.com.hk',
+    'google.ca',
+    'google.com.au',
+    'google.de',
+    'google.fr',
+    'com.google',
+    'google.it',
+    'google.pl',
+    'google.com.vn',
+    'google.se',
+    'google.com.br',
+    'google.co.th',
+    'google.nl',
+    'google.com.sg',
+    'google.com.tr',
+    'google.be',
+    'google.com.mx',
+    'google.com.ph',
+    'google.es',
+    'google.ch',
+    'google.dk',
+    'google.co.jp',
+    'google.com.my',
+    'google.ru',
+    'google.ie',
+    'google.com.pk',
+    'google.no',
+    'google.com.tw',
+    'google.co.za',
+    'google.ro',
+    'google.co.kr',
+    'google.pt',
+    'google.co.nz',
+    'google.co.id',
+    'google.lk',
+    'google.kz',
+    'google.at',
+    'google.com.ar',
+    'google.gr',
+    'google.fi',
+    'google.com.eg',
+    'google.com.ua',
+    'google.lt',
+    'google.sk',
+    'google.cm',
+    'google.ae',
+    'google.cl',
+    'google.hu',
+    'google.co.cr',
+    'google.com.co',
+    'google.co.il',
+    'google.cz',
+    'google.com.pe',
+    'google.hr',
+    'yahoo.co.jp',
+    'google.com.cy',
+    'google.rw',
+    'google.az',
+    'google.sn',
+    'google.iq',
+    'google.com.bh',
+    'google.com.bd',
+    'google.com.sv',
+    'googleadservices.com',
+    'google.si',
+    'google.co.ma',
+    'google.al',
+    'google.com.ng',
+    'google.co.ke',
+    'google.bg',
+    'google.jo',
+    'google.com.sa',
+    'google.com.uy',
+    'google.kg',
+  ];
+
+  const internalSites = [
+    'pluralsight.com',
+    'paypal.com',
+    'acloudguru', // don't think this will ever match, but was included
+    'acloudguru.com',
+    'acloud.guru', // should take care of all below as well
+    'checkout.acloud.guru',
+    'click.acloud.guru',
+    'learn.acloud.guru',
+    'help.acloud.guru',
+  ];
+
+  /**
+   * Set values internally, but do not store as cookies
+   * @param incoming
+   * @returns {any}
+   */
+  const setPsData = function (incoming) {
+    if(!incoming) { return } //early return for blanks and save multiple checks later
+
+    if(incoming.hasOwnProperty('marketingChannel')) {
+      marketingChannel = incoming.marketingChannel;
+    }
+    if(incoming.hasOwnProperty('setBy')) {
+      setBy = incoming.setBy;
+    }
+
+    return Object.assign(window.psData, incoming);
+  }
+
+  const setMC = function (channel, by, expireNow = false, setChannel = true) {
+    channel = channel.toLowerCase();
+    by = by.toLowerCase();
+
+    marketingChannel = channel;
+    setBy = by;
+    setMCCookies(marketingChannel, setBy, expireNow);
+    setPsData({ 'marketingChannel': marketingChannel, 'setBy': setBy});
+
+    if(setChannel && marketingChannel) {
+      channelFound = true;
+    }
+  }
+
+  const containsOneOf = function (haystackStr, needleArr, lcTheHay = true) {
+    if(lcTheHay) { haystackStr = haystackStr.toLowerCase(); }
+    return needleArr.some(n => haystackStr.includes(n));
+  }
+
+  /**
+   * Private function to simply get all of the current URL's query parameters
+   * @returns {null}
+   */
+  const getAllParameters = function () {
+    let allParameters = null;
+
+    if ('URLSearchParams' in window) {
+      allParameters = new URLSearchParams(window.location.search);
+    } else {
+      console.error('Browser is incapable -- unable to get URLSearchParams...');
+    }
+
+    return allParameters;
+  };
+
+  /**
+   * Checks if a param exists on the current url
+   * @param paramName String, e.g. "type"
+   * @returns {boolean} Boolean, true if
+   */
+  const hasQueryParameter = function (paramName) {
+    let hasIt = false;
+    const allParams = getAllParameters();
+
+    if (allParams != null) {
+      hasIt = allParams.has(paramName);
+    }
+
+    return hasIt;
+  };
+
+  /**
+   * Gets the value of the url param if it exists on the current url
+   * @param paramName String, e.g. "type"
+   * @returns {string} String, e.g. "individual"
+   */
+  const getqp = function (paramName) {
+    let paramValue = "";
+
+    if (hasQueryParameter(paramName)) {
+      const allParams = getAllParameters();
+      if (allParams != null) {
+        paramValue = decodeURI(allParams.getAll(paramName)).trim();
+      }
+    }
+
+    return paramValue;
+  };
+
+  const getMCCookies = function() {
+    let cookieObj = {};
+    cookieObj.psmc = mscookiesObject.getCookie(cookieName);
+    cookieObj.psmc_setby = mscookiesObject.getCookie(setByCookieName);
+    cookieObj.psmc_exp = mscookiesObject.getCookie(expCookieName);
+    cookieObj.psmc_first_utms = mscookiesObject.getCookie(firstUTMsCookieName);
+
+    return cookieObj;
+  }
+
+  const setMCCookies = function (channel, by, expireNow = false) {
+    let cDomain = getCookieDomain();
+    let days = expireNow ? -1 : expirationDays;
+    let zNow = new Date(Date.now());
+    let expiration = zNow.setDate(zNow.getDate() + days); //saving in milliseconds for comparison to Date;
+    let cookieSettings = {
+      'domain': cDomain,
+      'path': '/',
+      'expires': days
+    };
+    mscookiesObject.setCookie(cookieName, channel, cookieSettings );
+    mscookiesObject.setCookie(setByCookieName, by, cookieSettings);
+    mscookiesObject.setCookie(expCookieName, expiration, cookieSettings);
+  }
+
+  const clearMCCookies = function() {
+    // using jscookies library that backs up Utils.cookies
+    let cDomain = getCookieDomain();
+    Cookies.remove(cookieName, {path: '/', domain: cDomain});
+    Cookies.remove(setByCookieName, {path: '/', domain: cDomain});
+    Cookies.remove(expCookieName, {path: '/', domain: cDomain});
+    console.log('clearing mc cookies');
+  }
+
+  // one place in case this logic changes and needs to be consistent
+  // adding a dot (".") to start, this will allow any subdomain
+  const getCookieDomain = function() {
+    let pieces = document.location.hostname.split('.');
+    return '.' + pieces[pieces.length - 2] + '.' + pieces[pieces.length - 1];
+  }
+
+  const shouldOverwriteCookie = function() {
+    let cookieChannel = incomingCookies.psmc ? incomingCookies.psmc : '';
+    let tier2Channels = ['organic social', 'organic search', 'organic referrer', 'direct'];
+    let changeableChannel = tier2Channels.includes(cookieChannel);
+    if(!cookieChannel || changeableChannel) {
+      return true;
+    }
+    if(shouldCleanupCookies(incomingCookies)) {
+      return true;
+    }
+
+    return false;
+  }
+
+  /***
+   * give us a method to mock up parameters without constantly loading pages
+   *
+   * @param mock: json object with keys to overwrite portions of the detected parameters (example below)
+   *
+   * mock = {
+   *   referrer: 'https://facebook.com', // as it would come from document.referrer
+   *   utms: { // object with keys and values corresponding to utm params, can fake any of the ones we check
+   *     utm_medium: 'newsletter',
+   *     utm_term: 'cloud learning',
+   *   },
+   *   aid: '7010a000001xAKZAA2', // I'm assuming these are Affilliate IDs, normally read from URLs
+   *   mpid: '6217234519', // long integer, gathered from URL
+   *   previousChannel: 'display', // mock previous value for the cookie
+   *   previousSetBy: 'utm', // mock previous setBy in cookies
+   *   expireCookies: false, // any truthy value to mock expired cookie behaviors
+   * }
+   *
+   */
+  const checkMock = (mock) => {
+    // early return if we're not getting what we expect
+    if(typeof(mock) !== 'object' || Object.keys(mock).length < 1) {
+      return;
+    }
+
+    // fake referrer
+    if(mock.hasOwnProperty('referrer')) {
+      referrer = mock.referrer;
+      referringDomain = getReferringDomain(referrer);
+    }
+
+    // fake UTMs
+    if(mock.hasOwnProperty('utms')) {
+      // reset
+      utmCombinedStr = '';
+      incomingUTM = {};
+      // write, need to pull this together with main function for consistency and dry
+      Object.keys(mock.utms).forEach(function( key, index) {
+        //keep empty out of combined string, but let them overwrite the internal vars
+        if(mock.utms[key]) {
+          if(utmCombinedStr) {
+            utmCombinedStr += '|';
+          }
+          utmCombinedStr += mock.utms[key];
+        }
+        incomingUTM[key] = mock.utms[key];
+      });
+      shortUTM = combineShortUTM(incomingUTM);
+    }
+
+    // fake previous cookies
+    // should set at least previousChannel and previousSetBy if you're using
+    if(mock.hasOwnProperty('previousChannel')) {
+      if(mock.hasOwnProperty( 'previousSetBy')) {
+        marketingChannel = mock.previousChannel;
+        setBy = mock.previousSetBy;
+        setMC(marketingChannel, setBy, false, false);
+        incomingCookies.psmc = marketingChannel;
+        incomingCookies.psmc_setby = setBy;
+      } else {
+        console.log('found mocked previousChannel with out the previousSetBy, so ignored');
+      }
+    }
+    // any truthy setting ? better ideas?
+    if(mock.hasOwnProperty('expireCookies')) {
+      if(mock.expireCookies) {
+        setMC(marketingChannel, setBy, true, false);
+      }
+    }
+
+    // fake mpid
+    if(mock.hasOwnProperty('mpid')) {
+      mpid = mock.mpid;
+    }
+
+    // fake aid, could add vid here
+    if(mock.hasOwnProperty('aid')) {
+      aid = mock.aid;
+    }
+
+    // not using return yet
+    // return { incomingUTM };
+  }
+
+  // pull utms together for easy search across
+  // will combine any array of items fed in and return the result with empties removed and pipes between
+  const combineUTMs = function (utms) {
+    let combinedStr = '';
+    utms.forEach((u) => {
+      let qp = getqp(u);
+
+      if (qp) {
+        combinedStr += qp.toLowerCase();
+      } else {
+        combinedStr += utmPlaceholder;
+      }
+
+      combinedStr += utmDelimiter;
+    });
+    return combinedStr;
+  }
+
+  /**
+   *
+   * @param utms - our incomingUTMs as an object or array
+   * we'll search through utms for the keys specified in combining/shortUTMParams and then return a combined version
+   *
+   */
+  const combineShortUTM = function (utms) {
+    let combinedStr = '';
+
+    // this could probably be condensed and clever with join and replace, but is still changing
+    shortUTMParams.forEach(k => {
+      if(utms[k]) {
+        combinedStr += utms[k];
+      } else {
+        combinedStr += utmPlaceholder;
+      }
+      combinedStr += utmDelimiter;
+    });
+    return combinedStr;
+  }
+
+  /**
+   *
+   */
+  const getFirstSessionUTMs = function (utms) {
+    let firstUTMs = 'not set';
+    const { psmc_first_utms } = getMCCookies();
+    if(psmc_first_utms) {
+      return psmc_first_utms;
+    } else {
+      firstUTMs = combineUTMs(utms);
+      mscookiesObject.setCookie( firstUTMsCookieName, firstUTMs, { 'expires': 'session' } );
+    }
+    return firstUTMs;
+  }
+
+  /**
+   *
+   * @param utmNames - array of items we'll look to match to parameters from the url
+   * @param incomingUTM - an object of key value pairs for utms from the url, update where we can
+   * @returns incomingUTM with the found items added
+   */
+  const assignUTMs = function (utmNames, incomingUTM) {
+    utmNames.forEach((u) => {
+      incomingUTM[u] = getqp(u);
+    });
+
+    return incomingUTM;
+  }
+
+  /**
+   * pull together the two parts we're using for AID, this changed and may change again
+   * so wanted it to be defined for easy updates and understanding
+   * @returns {string} - the combined AID we'll use for comparisons
+   */
+  const getAID = function() {
+    let values = [getqp('aid'), getqp('vid')];
+    return values.filter(Boolean).join('|');
+  }
+
+  /**
+   * @param fullUrl - incoming URL, in referrer format, with protocol (ex: https://www.pluralsight.com)
+   * @param searchArr - Array of domains we're matching against as strings, ex ['reddit.com', 'subdomain.domain.com', 't.co']
+   * @returns boolean - whether or not the fullUrl matches an item in our array to the level of specficity provided
+   *
+   * this is overly complex because matching just from our allow list to referrer was giving us fake positives for pluralsight.com matching t.co
+   * and matching just the ending would also open us to things like pluralsight.co matching in the future
+   * and... we can't just hostname match, because we have some subdomains listed
+   * so we're going a little more complex, trying to leave informative comments along the way
+   *
+   * general scheme is match incoming domain name to items in our array of allowed domains by matching full parts separated by dots
+   * match on the level of specificity defined in the array
+   * that allows a full range of subdomains if we don't specify, and allows just our list if we do
+   *
+   * 't.co' will match twitter.t.co and sub.t.co but not pluralsight.com or donut.co
+   * 'plus.google.com' will match img.plus.google.com but not search.google.com
+   */
+  const domainMatch = function (fullUrl, searchArr) {
+    let checkForDomain = fullUrl.toLowerCase().trim();
+    if(checkForDomain.length) {
+      try {
+        let hostname = new URL(checkForDomain).hostname;
+        return searchArr.some(allowDomain => {
+          //match each piece, starting from the end
+          let allowPieces = allowDomain.split('.');
+          let checkPieces = hostname.split('.');
+          checkPieces = checkPieces.slice(-allowPieces.length);
+
+          return JSON.stringify(allowPieces) === JSON.stringify(checkPieces);
+        });
+      } catch(e) {
+        console.log('can not match domain name for referrer match ' + fullUrl)
+      }
+    }
+  }
+
+  // might change, need in multiple places, keep it frosty, keep it dry
+  const getReferringDomain = function (refURL) {
+    let hostname = '';
+    if(refURL.trim().length) {
+      try {
+        hostname = new URL(refURL).hostname;
+        // simplifying to match our list
+        let snp = hostname.split('.');
+        if(snp.length > 2) {
+          hostname = snp[snp.length - 2] + '.' + snp[snp.length - 1];
+        }
+      } catch (e) { // probably a better way to handle this
+        console.log('no referrer found for ' + refURL);
+      }
+    }
+    return hostname;
+  }
+
+  // need a full match for what might be multiple values separated by commas
+  const fullMatch = function (needle, stackList = '') {
+    let slItems = stackList.split(',');
+    return slItems.includes(needle);
+  }
+
+  /**
+   * Repeatable way to check if one of our UTM strings is empty after accounting for delimiters and anything else we add
+   * This was getting really repetitive in the code
+   * @param strToCheck - our UTM string, usually going to be
+   * @returns {boolean} - True if we have values in the string, false if blank after accounting for transformations
+   */
+  const containsUTMs = function(strToCheck) {
+    if(strToCheck && strToCheck.trim().replaceAll(utmDelimiter,'').length) {
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Easy way to check if a UTM string has legitimate values, and return either that string or a specified fallback if it's blank
+   * requested functionality to define a cascade for "setby" values
+   * @param utmStr - our internal UTM strings like shortUTM and utmCombineStr
+   * @param fallback - a fallback values, ex: aid or mpid
+   * @returns the first non-blank option presented, or the last option if all are blank
+   */
+  const utmOrFallback = function(utmStr, fallback) {
+    if(containsUTMs(utmStr)) {
+      return utmStr;
+    }
+    return fallback;
+  }
+
+  /**
+   * A centralized way for us to clean up temporary incorrect settings stored in cookies on the user's next visit
+   * This gives us a way to get rid of the "echoes" of testing variables, changed logic, and other unsavory characters without forcing a new channel to be set
+   * @param cookieCheck - an object with the psmc cookies (psmc, psmc_setby, psmc_expiration)
+   * @returns {boolean} - whether or not one of our defined undesirable conditions was found
+   */
+  const shouldCleanupCookies = function(cookieCheck) {
+    if(cookieCheck.psmc === 'other' && !containsUTMs(cookieCheck.psmc_setby)) { //added 10/21
+      return true;
+    }
+    return false;
+  }
+
+  const sort = function() {
+    // our decision tree
+    if (utmCombinedStr || mpid || aid || vid || referrer) {
+      if (mpid) {
+        setMC('affiliate', utmOrFallback(shortUTM, mpid));                                               // rule 1: Affiliate: MPID - setby is shortUTM if available or mpid if not
+      } else if (utmCombinedStr.includes('affiliate')) {
+        setMC('affiliate', shortUTM);                                                                     // rule 2: Affiliate: "Digital_Affiliate", "Affiliate" anywhere in UTMs
+      } else if (containsOneOf(aid, ['7010a000001xAKZAA2'], false)) {
+        setMC('affiliate', utmOrFallback(shortUTM, aid));                                                 // rule 3: Affiliate: Affiliate AID
+      } else if (utmCombinedStr.includes('impactradius') || utmCombinedStr.includes('shareasale')) {
+        setMC('affiliate', shortUTM);                                                                     // rule 4: Affiliate: Specific Affiliates in UTM Source
+      } else if (utmCombinedStr.includes('display')) {
+        setMC('display', shortUTM);                                                                       // rule 5: Display: "digital_display" and "display"
+      } else if (utmCombinedStr.includes('mntn')) {
+        setMC('display', shortUTM);                                                                       // rule 8: Display: "MNTN"
+      } else if (utmCombinedStr.includes('youtube')) {
+        if (incomingUTM.utm_medium && incomingUTM.utm_medium.includes('paid')) {
+          setMC('display', shortUTM);                                                                     // rule 6: Display: "youtube" and "paid" utm medium
+        } else if (incomingUTM.utm_source && incomingUTM.utm_source.includes('paid')) {
+          setMC('display', shortUTM);                                                                     // rule 7: Display: "youtube" and "paid" utm source
+        } else if (utmCombinedStr.includes('prospecting')) {
+          setMC('display', shortUTM);                                                                     // Rule 9: "Display" "Prospecting"
+        } else if (utmCombinedStr.includes('retargeting')) {
+          setMC('display', shortUTM);                                                                     // rule 10: Display: "youtube" and "retargeting"
+        } else if (incomingUTM.utm_medium && incomingUTM.utm_medium.includes('social')) {
+          setMC('organic social', shortUTM);                                                              // rule 11: Display: "youtube" and "social" utm medium
+        } else if (incomingUTM.utm_source && incomingUTM.utm_source.includes('social')) {
+          setMC('organic social', shortUTM);                                                              // rule 12: Display: "youtube" and "social" utm source
+        } else if (domainMatch(referrer, socialDomainPieces) && incomingUTM.utm_source && fullMatch('youtube', incomingUTM.utm_source)) {
+          setMC('organic social', shortUTM);                                                              // rule 13: referring social domain + youtube in source
+        } else if (!utmCombinedStr.includes('organic-social')) {
+          setMC('display', shortUTM);                                                                     // rule 14: catchall for social going to display if youtube and none of above are true.
+        } else {
+          setMC('other', shortUTM); // catching youtube specific "other"                                  // rule 15: other catchall
+        }
+      } else if (containsOneOf(utmCombinedStr, ['spotify', 'sxm', 'podcastone', 'dzone'])) {
+        setMC('audio', shortUTM);                                                                         // rule 16: Audio
+      } else if (utmCombinedStr.includes('paid_search') || utmCombinedStr.includes('paid-search')) {
+        setMC('paid search', shortUTM);                                                                   // rule 17: Paid Search: "paid_search"
+      } else if (utmCombinedStr.includes('branded')) {
+        setMC('paid search', shortUTM);                                                                   // rule 18: Paid Search: "branded"
+      } else if (utmCombinedStr.includes('ppc') && utmCombinedStr.includes('google')) {
+        setMC('paid search', shortUTM);                                                                   // rule 19: Paid Search: "ppc" and "google"
+      } else if (utmCombinedStr.includes('ppc') && utmCombinedStr.includes('bing')) {
+        setMC('paid search', shortUTM);                                                                   // rule 20: Paid Search: "ppc" and "bing"
+      } else if (utmCombinedStr.includes('ppc') && utmCombinedStr.includes('adwords')) {
+        setMC('paid search', shortUTM);                                                                   // rule 21: Paid Search: "ppc" and "adwords"
+      } else if (utmCombinedStr.includes('cpc') && utmCombinedStr.includes('bing')) {
+        setMC('paid search', shortUTM);                                                                   // rule 22: Paid Search: "cpc" and "bing"
+      } else if (utmCombinedStr.includes('cpc') && utmCombinedStr.includes('google')) {
+        setMC('paid search', shortUTM);                                                                   // rule 23: Paid Search: "cpc" and "google"
+      } else if (utmCombinedStr.includes('cpc') && utmCombinedStr.includes('yahoo')) {
+        setMC('paid search', shortUTM);                                                                   // rule 24: Paid Search: "cpc" and "yahoo"
+      } else if (utmCombinedStr.includes('cpc') && utmCombinedStr.includes('duckduckgo')) {
+        setMC('paid search', shortUTM);                                                                   // rule 25: Paid Search: "cpc" and "duckduckgo"
+      } else if (utmCombinedStr.includes('paid-social')) {
+        setMC('paid social', shortUTM);                                                                   // rule 26: Paid Social: "paid-social"
+      } else if (utmCombinedStr.includes('cpcp')) {
+        setMC('paid social', shortUTM);                                                                   // rule 27: Paid Social: "cpcp"
+      } else if (utmCombinedStr.includes('linkedin') && !utmCombinedStr.includes('organic-social')) {
+        setMC('paid social', shortUTM);                                                                   // rule 28: Paid Social: "linkedin" But: Must only fire if 'organic-social' is not in utmCombinedStr
+      } else if (utmCombinedStr.includes('twitter') && !utmCombinedStr.includes('organic-social')) {
+        setMC('paid social', shortUTM);                                                                   // rule 29: Paid Social: "twitter" But: Must only fire if 'organic-social' is not in utmCombinedStr
+      } else if (utmCombinedStr.includes('reddit') && !utmCombinedStr.includes('organic-social')) {
+        setMC('paid social', shortUTM);                                                                   // rule 30: Paid Social: "reddit" But: Must only fire if 'organic-social' is not in utmCombinedStr
+      } else if (utmCombinedStr.includes('facebook') && !utmCombinedStr.includes('organic-social')) {
+        setMC('paid social', shortUTM);                                                                   // rule 31: Paid Social: "facebook" But: Must only fire if 'organic-social' is not in utmCombinedStr
+      } else if (utmCombinedStr.includes('facebook') && utmCombinedStr.includes('paid-search')) {
+        setMC('paid social', shortUTM);                                                                   // rule 32: Paid Social: "facebook" and a specific historical case where paid-search was flagged for paid social
+      } else if (incomingUTM.utm_medium && fullMatch('cpc', incomingUTM.utm_medium) && !incomingUTM.utm_source) {
+        setMC('paid search', shortUTM);                                                                   // rule 33: Paid Social: 'CPC' Catchall
+      } else if (utmCombinedStr.includes('digital_paid_social')) {
+        setMC('paid social', shortUTM);                                                                   // rule 34: Paid Social: "Digital_Paid_Social"
+      } else if (containsOneOf(utmCombinedStr, ['email', 'nurture', 'lifecycle', 'newsletter'])) {
+        setMC('email', shortUTM);                                                                         // rule 35: Email: 4 email UTM parameters
+      } else if (domainMatch(referrer, emailDomainPieces)) {
+        setMC('email', 'referring domain');                                                           // rule 36, 37: Email: email referring domain
+      } else if (utmCombinedStr.includes('organic-social') || utmCombinedStr.includes('organic_social')) {
+        setMC('organic social', shortUTM);                                                                // rule 38 Organic Social: organic-social
+      } else if (utmCombinedStr.includes('partner')) {
+        setMC('partner', shortUTM);                                                                       // rule 39 Partner: "partner"
+      } else if (containsOneOf(utmCombinedStr, ['events', 'ps_live', 'ps_navigate'])) {
+        setMC('events', shortUTM);                                                                        // rule 40: Events: combined
+      } else if (utmCombinedStr.includes('comms')) {
+        setMC('comms', shortUTM);                                                                         // rule 41: Comms: "comms" rule 42 is not in javascript
+      } else if (utmCombinedStr.includes('referral_program')) {
+        setMC('referral', shortUTM);                                                                      // rule 48: Referral: "digital Referral program"
+      } else if (incomingUTM.utm_campaign && incomingUTM.utm_campaign.includes('push_notification')) {
+        setMC('push notification', shortUTM);                                                             // rule 52: Push Notification
+      } else if (incomingUTM.utm_campaign && incomingUTM.utm_campaign.includes('sms')) {
+        setMC('sms', shortUTM);                                                                           // rule 53: SMS
+      } else if (containsOneOf(aid, partnerAIDs, false)) {
+        setMC('partner', utmOrFallback(shortUTM, aid));                                                   // rule 49: Partner: Partner AIDs
+      } else if (aid) {
+        setMC('new aid', utmOrFallback(shortUTM, aid));                                                   // rule 45: new AID
+      } else if (vid && containsUTMs(utmCombinedStr)) {
+        setMC('email', vid);
+      }
+    } // end if (utmCombinedStr)
+
+    let latestCookies = getMCCookies();
+    if (Date.now() > latestCookies.psmc_exp) { // expired clear storage, update variable
+      clearMCCookies();
+      latestCookies = {};
+      cookiesExpired = true;
+    }
+
+    if (!channelFound) { // haven't set a channel, keep looking
+      if (cookiesExpired || shouldOverwriteCookie()) {
+        // cookies expired or should be overwritten, go to next lower tier
+        if (domainMatch(referrer, socialDomainPieces)) {
+          setMC('organic social', 'referring domain');                                                // rule 38: Organic Social
+        } else if (containsOneOf(utmCombinedStr, searchUTMPieces)) {
+          setMC('organic search', shortUTM);                                                              // rule 46: Organic Search
+        } else if (domainMatch(referrer, searchDomainPieces)) {
+          setMC('organic search', 'search engine');                                                   // rule 47: Organic Search
+        } else if (containsUTMs(utmCombinedStr)) {
+          setPsData({marketingChannel: 'other', setBy: shortUTM});                                    // rule 43: Other setting an "other" bucket if we have UTMs and somehow haven't set a channel yet, this should help us track down gaps or bad UTM setups, not setting a cookie for this scenario
+        } else if (referrer && !domainMatch(referrer, internalSites)) {
+          setMC('organic referrer', 'referrer default');                                              // rule 50: Organic Referrer: Organic Referrer exists
+        } else if (cookiesExpired || !incomingCookies || !incomingCookies.psmc || shouldCleanupCookies(incomingCookies)) { // no referrer and no previous cookie, or an explicit case we should overwrite, so finally our default
+          setMC('direct', 'default');                                                               // rule 51: Direct
+        }
+      }
+    }
+
+    if(!channelFound && incomingCookies && incomingCookies.psmc) {
+      setPsData({ 'marketingChannel': incomingCookies.psmc, 'setBy': incomingCookies.psmc_setby});
+    }
+
+  } //end sort();
+
+  /**
+   * Adding functionality to populate cookies for marketo with incoming UTM params and use those cookies (or parameters)
+   * to populate Marketo form fields so they can be attributed correctly even after the initial page
+   */
+
+  /**
+   * Only called if we have UTMs, so will overwrite all, even if blank, rather than keeping a mix of new and old
+   */
+  const setMktoUTMCookies = function(incomingUTM) {
+    let mktoSettings = {};
+    Object.keys(incomingUTM).forEach((u) => {
+      let cValue = incomingUTM[u] ? incomingUTM[u] : '';
+      mscookiesObject.setCookie('mkto_' + u, cValue, mktoSettings);
+    });
+  }
+
+  const populateMktoUTMFields = function(utmParams) {
+    const lookup = {
+      'utm_source': 'UTM_Source__c',
+      'utm_medium': 'UTM_Medium__c',
+      'utm_campaign': 'UTM_Campaign__c',
+      'utm_content': 'UTM_Content__c',
+      'utm_term': 'UTM_Term__c'
+    };
+
+    utmParams.forEach((u) => {
+      let foundUTM = getqp(u) || mscookiesObject.getCookie('mkto_' + u) || undefined;
+      if (foundUTM && lookup[u]) {
+        let formFieldName = lookup[u];
+        let formFieldEl = document.getElementsByName(formFieldName);
+        formFieldEl.forEach((f) => {
+          f.value = foundUTM;
+        });
+      }
+    });
+  }
+
+  const mktoInit = function(tried = 0) {
+    if(typeof(MktoForms2) === 'object' && typeof(MktoForms2.whenReady) === 'function') {
+      if(containsUTMs(utmCombinedStr)) {
+        setMktoUTMCookies(incomingUTM);
+      }
+      MktoForms2.whenReady( function() {
+        populateMktoUTMFields(utmParams);
+      });
+    } else if (tried < 10) {
+      tried++;
+      setTimeout(mktoInit, 500, tried);
+    }
+  }
+
+  const init = function (mock = {}) {
+    utmCombinedStr = combineUTMs(utmParams);
+    incomingUTM = assignUTMs(utmParams, incomingUTM);
+    shortUTM = combineShortUTM(incomingUTM);
+    firstUTMs = getFirstSessionUTMs(utmParams);
+    channelFound = false;
+    cookiesExpired = false;
+
+    // Other factors in Marketing Channel definitions
+    mpid = getqp('mpid');
+    aid = getAID(); //combining AID and VID in urls
+    vid = getqp('vid'); // just VID
+    referrer = document.referrer;
+    referringDomain = getReferringDomain(referrer);
+    incomingCookies = getMCCookies();
+
+    let mockSettings = checkMock(mock);
+    setPsData({incomingUTM, utmCombinedStr, firstUTMs});
+
+    sort();
+
+    // marketo cookies and form fills from UTMs
+    mktoInit();
+
+    return {
+      marketingChannel,
+      setBy,
+      shortUTM,
+      incomingUTM,
+      firstUTMs,
+      containsUTMs,
+      init
+    }
+  }
+
+  return init();
+}());
+});</script><script>
+window.analyticsHelpers=function(e){function r(n){if(t[n])return t[n].exports;var u=t[n]={exports:{},id:n,loaded:!1};return e[n].call(u.exports,u,u.exports,r),u.loaded=!0,u.exports}var t={};return r.m=e,r.c=t,r.p="",r(0)}([function(e,r,t){e.exports=t(1)},function(e,r,t){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(r,"__esModule",{value:!0}),r.stringifyUserSubscriptions=r.pickUserSubscriptionProperty=r.normalizeSlug=void 0;var u=t(2),i=n(u),o=t(3),s=n(o),c=t(4),l=n(c);r.normalizeSlug=i["default"],r.pickUserSubscriptionProperty=s["default"],r.stringifyUserSubscriptions=l["default"]},function(e,r){"use strict";function t(e){return e.split("-").map(function(e){return n.includes(e.toUpperCase())?e.toUpperCase():e.replace(/\b[a-z]/g,function(e){return e.charAt(0).toUpperCase()})}).join(" ")}Object.defineProperty(r,"__esModule",{value:!0}),r["default"]=t;var n=["AWS","CC","CCNA","CCNP","CSS","IINS","HTML","JS","SQL"]},function(e,r){"use strict";function t(e,r){var t=e&&e.user&&e.user.userSubscriptions||[],n=t.map(function(e){return null!==e[r]&&void 0!==e[r]?e[r]:"null"});return n.join(",")}Object.defineProperty(r,"__esModule",{value:!0}),r["default"]=t},function(e,r){"use strict";function t(e,r){var t=e&&e.user&&e.user.userSubscriptions||[];return t.map(function(e){return n(e.offerCode)+","+n(e.sku)}).join("|")}function n(e){return null!==e&&void 0!==e?e:"null"}Object.defineProperty(r,"__esModule",{value:!0}),r["default"]=t}]);
+</script><script>_satellite["_runScript2"](function(event, target, Promise) {
+var url=document.location.href;url.indexOf(".com/profile")>-1&&adobe.target.triggerView("pspageView");
+});</script><iframe sandbox="allow-scripts allow-same-origin" title="Adobe ID Syncing iFrame" id="destination_publishing_iframe_pluralsight_0" name="destination_publishing_iframe_pluralsight_0_name" style="display: none; width: 0px; height: 0px;" src="Getting%20Started%20with%20Node%20JS%20_arquivos/dest5.html" data-airgap-id="30" class="aamIframeLoaded"></iframe><webengagedata><style type="text/css">#webklipper-publisher-widget-container, #webklipper-publisher-widget-container * {overflow:visible; -webkit-box-sizing: content-box; -moz-box-sizing: content-box;  box-sizing: content-box; margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}</style><div id="webklipper-publisher-widget-container"><iframe title="webengage-engagement-callback-frame" name="webengage-engagement-callback-frame" id="webengage-engagement-callback-frame" marginheight="0" marginwidth="0" style="position: absolute; background-color: transparent; bottom: 0px; right: 0px; border: medium none; overflow: hidden; visibility: hidden; display: none;" frameborder="0"></iframe><iframe title="_we_wk_data_store" name="_we_wk_data_store" id="_we_wk_data_store" marginheight="0" marginwidth="0" style="position: absolute; background-color: transparent; bottom: 0px; right: 0px; border: medium none; overflow: hidden; visibility: hidden; display: none;" src="Getting%20Started%20with%20Node%20JS%20_arquivos/storage-frame-1.html" data-airgap-id="34" frameborder="0"></iframe><script type="text/javascript" charset="UTF-8" async="" src="Getting%20Started%20with%20Node%20JS%20_arquivos/upf.js" data-airgap-id="35"></script><iframe title="webpush-onsite" name="webpush-onsite" id="webpush-onsite" marginheight="0" marginwidth="0" style="height: 124px; width: 350px; visibility: visible; display: block; position: fixed; top: 20px; left: 20px; z-index: 16776272;" frameborder="0"></iframe></div></webengagedata><script>
+setTimeout((function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//s2.pluralsight.com/knowledge-owl/kowidget.v1.8.0.js",document.head.appendChild(e),setTimeout((function(){window.KnowledgeOwl&&window.KnowledgeOwl.init()}),1e3)}),250);
+</script><div id="koWidget"><div><button class="_15JtsRsi0S5y-LARVHQ2sh"><svg class="_3ZnOeGVnCN5laxaPARcs25" viewBox="0 0 36 36" role="img" aria-label="Help"><title>Help</title><path style="fill: rgb(35, 31, 32);" d="M32.4 33.9c-.1 0-.1 0-.2-.1l-8.7-4.3c-1.7.5-3.5.8-5.4.8-8.8 0-16-6.3-16-14s7.2-14 16-14 16 6.3 16 14c0 3.7-1.6 7.2-4.5 9.8l3.3 7.1c.1.2 0 .4-.1.6-.2.1-.3.1-.4.1z"></path><path style="fill: rgb(255, 255, 255);" d="M32.8 34.4c-.1 0-.2 0-.2-.1l-9-4.5c-1.8.6-3.7.8-5.6.8-9.1 0-16.5-6.5-16.5-14.5S8.9 1.6 18 1.6s16.5 6.5 16.5 14.5c0 3.8-1.7 7.4-4.7 10.1l3.4 7.4c.1.2 0 .4-.1.6 0 .2-.1.2-.3.2zm-9.2-5.6c.1 0 .2 0 .2.1l7.9 3.9-3-6.4c-.1-.2 0-.4.1-.6 3-2.6 4.6-6 4.6-9.6 0-7.4-7-13.5-15.5-13.5-8.6 0-15.5 6-15.5 13.5s7 13.5 15.5 13.5c1.9 0 3.7-.3 5.5-.9.1.1.2 0 .2 0z"></path><path style="fill: rgb(255, 255, 255);" d="M16.2 15.6l.1-.1c3.1-.1 4.5-1.1 4.5-2.7 0-1.4-1.1-2.3-2.8-2.3-1.5 0-2.8.7-4 1.9l-1.8-2c1.4-1.6 3.3-2.7 5.9-2.7 3.4 0 5.8 1.9 5.8 5s-2.2 4.5-4.9 4.9l-.2 2h-2l-.6-4zm-.2 6h3.3V25H16v-3.4z"></path></svg></button></div></div></body><div style="position: fixed; z-index: 2147483647;" id="transcend-consent-manager"></div><iframe style="display: none;" src="Getting%20Started%20with%20Node%20JS%20_arquivos/b8abd831-c4a2-4a4f-8fe7-475bb37be895.xhtml" data-airgap-id="36" width="0" height="0"></iframe></html>
